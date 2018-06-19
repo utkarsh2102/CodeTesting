@@ -4,6 +4,19 @@ div.jumbotron.hero-technology{
     background-size:cover;
     background-position:center;
     padding:0;
+    margin:0;
+}
+
+#home{
+  background-color: #ff6600;
+}
+
+#about-us{
+  background-color: #fff;
+}
+
+#pledge{
+  background-color: #0a8901;
 }
 
 h1.hero-title,h2.hero-title,h3.hero-title{
@@ -16,8 +29,7 @@ p.hero-subtitle{
     max-width:100%; /* Changed it from 600px */
     margin:25px auto;
     padding:10px 15px;
-    background-color:#72b3b5;
-    color:#fff;
+    color:#1f1c1c;
     font-weight:500;
 }
 
