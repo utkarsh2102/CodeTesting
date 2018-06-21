@@ -1,5 +1,35 @@
+footer {
+    background: #da7516 !important;
+    color: #000;
+}
+
+footer h5, footer ul li a {
+    color: #000 !important;
+}
+
+nav, footer .after-footer {
+    background: #ececec !important;
+    color: #000;
+}
+
+.nav-item .nav-link {
+    color: #000 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+footer .footer-email {
+    background: #ececec !important;
+    color: #000 !important;
+}
+
+footer .email-btn-wrapper {
+    color: #000 !important;
+    border: none !important;
+}
+
 div.jumbotron.hero-technology{
-    color:#fff;
+    color:#ececec;
     text-align:center;
     background-size:cover;
     background-position:center;
@@ -8,15 +38,16 @@ div.jumbotron.hero-technology{
 }
 
 #home{
-  background-color: #ff6600;
+  background-color: #ececec;
 }
 
 #about-us{
-  background-color: #fff;
+  background-color: #13c7be;
 }
 
 #pledge{
-  background-color: #0a8901;
+  background-color: #ececec;
+  color: #000 !important;
 }
 
 h1.hero-title,h2.hero-title,h3.hero-title{
