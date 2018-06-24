@@ -1,0 +1,44 @@
+body{
+  font-family: comic;
+  background-color: #fafafa;
+}
+
+#card{
+  border: solid;
+  border-width: thin;
+  border-color: #ccc;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.18);
+  border-radius: 4px;
+  padding: 0px 10px 10px;
+  width: 300px;
+  margin: auto;
+  background-color:
+}
+
+.animal{
+  width:300px;
+  margin: 0px 0px 10px;
+  border-radius: 4px;
+}
+
+.bottom{
+  border: inherit;
+  border-color: inherit;
+  border-width: thin;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.fact{
+  font-style: italic;
+}
+
+ul{
+  list-style: none;
+  padding: 0px;
+}
+
+.label{
+  font-weight: bold;
+}
