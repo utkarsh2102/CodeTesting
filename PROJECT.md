@@ -18,7 +18,7 @@ The time span alloted was **5 weeks**.
 
 
 ## METHODOLOGY:
-The above project was apporached by adopting the following the general methodology, which is as follows:
+The above project was apporached by adopting the general methodology, which is as follows:
 - Questionnaire,
 - Client’s requirements,
 - Concept,
