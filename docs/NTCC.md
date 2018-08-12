@@ -21,6 +21,14 @@ Let's dive in and look at the basics of the language.
 ### Basic Syntaxing:
 - Intendation:
 
-Unlike `C`, `Python` works on indentation, rather than using brackets.
-One can use both, spaces or tabs to indent the given snippet or script. 
-However, the standard way to indent the `Python` code or script is by using a set of 4 spaces.
+  Unlike `C`, `Python` works on indentation, rather than using brackets.
+  One can use both, spaces or tabs to indent the given snippet or script. 
+  However, the standard way to indent the `Python` code or script is by using a set of 4 spaces.
+  Let us see a snippet for the same.
+  
+  ```
+  a = 1
+  if a == 1:
+      # indent by using 4 spaces
+      print("a is 1.")
+  ```
