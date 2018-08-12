@@ -15,3 +15,12 @@ In `Python2`, the `print` statement is not a function, and in this way it is sum
 Be that as it may, in `Python3`, it is a function, and must be conjured with enclosures.  
 
 `Python` is not only `object-oriented` but also a `funtional paradigm`.
+Released in 1991, `Python` is a powerful language, ruling the world over.
+Let's dive in and look at the basics of the language.
+
+### Basic Syntaxing:
+- Intendation:
+
+Unlike `C`, `Python` works on indentation, rather than using brackets.
+One can use both, spaces or tabs to indent the given snippet or script. 
+However, the standard way to indent the `Python` code or script is by using a set of 4 spaces.
