@@ -1,4 +1,4 @@
-# `Scraping` the Web using `Python`! :D
+# `Scraping` the `Web` using `Python`! :D
 
 ## `Python 101`
 
@@ -75,8 +75,8 @@ Well, yea, It is! So let's dive in and look at the basics of the language.
   ```
   # change as per the requirement
   number = 5
-  # need an input from the user? uncomment this ;)
-  #number = int(input("Lemme know the digit/s, please? "))
+  # need an input from the user? uncomment the next comment ;)
+  # number = int(input("Lemme know the digit/s, please? "))
   fact = 1
   # checking if the number is +ve, -ve or 0
   if number < 0:
@@ -117,6 +117,86 @@ Well, yea, It is! So let's dive in and look at the basics of the language.
   - `Lists`
   - `Tuples`
   - `Dictionary`
+  
+  
+Oh, don't you complain if the names are not very clear to you, okay?  
+Instead, let's do these in brief! :D  
+
+ - `Numbers`:
+ 
+    Well, who isn't familiar with numbers? Ultimately, we've been using Math since a long time, right? But let's talk `Python` here!  
+    These simply store the `numeric` values like `integers`, `floating points`, `real` and `complex` numbers, etcetra.
+    And oh, the declaration is of course, done using the `=` operator, remember?  
+    Oh, another feature we have is that we can delete the values using the `del` keyword.  
+    Eh, confused? Here's an example for you.
+   
+   ```
+   var1 = 12     #declaration of var1
+   var2 = 21     #declaration of var2
+   del var1      #deletion of var1
+   ```
+   Makes sense, now?  
+   
+   Well, the different types we can store in here are as follows:
+   ```
+   - `int`       # +ve, -ve or 0
+   - `long`      # int with unlimited size
+   - `float`     # the one which deals with fractions
+   - `complex`   # existing in x+yZ form, where Z is square root of -1
+   ```
+   
+  Oh, are they inter-convertible?  
+  Well, yes. They most certainly are!  
+  But how? Let me walk you through it.
+  
+  ```
+  var1 = 12
+  print(var1)
+  var2 = float(var1) # this converts var1 from int to float ;)
+  print(var2)
+  ```
+  
+  Wondering what the output would be?  
+  Nevermind, we have you covered ;)  
+  
+  ```
+  OUTPUT: 7
+          7.0
+  ```
+ 
+  Hehe, you got what happened, right?  
+  Yay, we'll move one!
+  
+  
+ - `Strings`:
+ 
+    So we know what `string` are, right? But what's different?  
+    Ket's have a look here, now.  
+    
+    ```
+    welc = 'Hello, World!'     #declaration of the string welc
+    intro = “I’m Utkarsh”      #declaration of another string intro
+    print(welc)
+    print(str[0])              #prints 1st character in the string using slice operator
+    print(str[2:5])            #prints 3rd to 6th character using slice operator
+    print(welc+intro)          #adding 2 strings using concatenation operator
+    print(str*2)               #repeating welc twice using repetition operator
+    ```
+    
+    Now, what on earth will that print? ;)  
+    Here's the output:  
+    
+    ```
+    OUTPUT: Hello, World!
+            H
+            llo
+            Hello, World!I’m Utkarsh
+            Hello, World!Hello, World!
+    ```
+  
+  So, what did you get?  
+  We saw the `+` and the `*` operator in use. Amazing, right?  
+  Oh, to add, we can also add `("""      """)`, if needed ;)
   
   
   
