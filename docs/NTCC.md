@@ -119,10 +119,10 @@ Well, yea, It is! So let's dive in and look at the basics of the language.
   - `Dictionary`
   
   
-Oh, don't you complain if the names are not very clear to you, okay?  
-Instead, let's do these in brief! :D  
+  Oh, don't you complain if the names are not very clear to you, okay?  
+  Instead, let's do these in brief! :D  
 
- - `Numbers`:
+- `Numbers`:
  
     Well, who isn't familiar with numbers? Ultimately, we've been using Math since a long time, right? But let's talk `Python` here!  
     These simply store the `numeric` values like `integers`, `floating points`, `real` and `complex` numbers, etcetra.
@@ -130,45 +130,45 @@ Instead, let's do these in brief! :D
     Oh, another feature we have is that we can delete the values using the `del` keyword.  
     Eh, confused? Here's an example for you.
    
-   ```
-   var1 = 12     #declaration of var1
-   var2 = 21     #declaration of var2
-   del var1      #deletion of var1
-   ```
-   Makes sense, now?  
-   
-   Well, the different types we can store in here are as follows:
-   ```
-   - `int`       # +ve, -ve or 0
-   - `long`      # int with unlimited size
-   - `float`     # the one which deals with fractions
-   - `complex`   # existing in x+yZ form, where Z is square root of -1
-   ```
-   
-  Oh, are they inter-convertible?  
-  Well, yes. They most certainly are!  
-  But how? Let me walk you through it.
-  
-  ```
-  var1 = 12
-  print(var1)
-  var2 = float(var1) # this converts var1 from int to float ;)
-  print(var2)
-  ```
-  
-  Wondering what the output would be?  
-  Nevermind, we have you covered ;)  
-  
-  ```
-  OUTPUT: 7
+    ```
+    var1 = 12     #declaration of var1
+    var2 = 21     #declaration of var2
+    del var1      #deletion of var1
+    ```
+    Makes sense, now?  
+
+    Well, the different types we can store in here are as follows:
+    ```
+    - `int`       # +ve, -ve or 0
+    - `long`      # int with unlimited size
+    - `float`     # the one which deals with fractions
+    - `complex`   # existing in x+yZ form, where Z is square root of -1
+    ```
+
+    Oh, are they inter-convertible?  
+    Well, yes. They most certainly are!  
+    But how? Let me walk you through it.
+
+    ```
+    var1 = 12
+    print(var1)
+    var2 = float(var1) # this converts var1 from int to float ;)
+    print(var2)
+    ```
+
+    Wondering what the output would be?  
+    Nevermind, we have you covered ;)  
+
+    ```
+    OUTPUT: 7
           7.0
-  ```
- 
-  Hehe, you got what happened, right?  
-  Yay, we'll move one!
-  
-  
- - `Strings`:
+    ```
+
+    Hehe, you got what happened, right?  
+    Yay, we'll move one!
+
+
+- `Strings`:
  
     So we know what `string` are, right? But what's different?  
     Ket's have a look here, now.  
@@ -193,12 +193,15 @@ Instead, let's do these in brief! :D
             Hello, World!I’m Utkarsh
             Hello, World!Hello, World!
     ```
-  
-  So, what did you get?  
-  We saw the `+` and the `*` operator in use. Amazing, right?  
-  Oh, to add, we can also add `("""      """)`, if needed ;)
-  
-  
-  
+
+    So, what did you get?  
+    We saw the `+` and the `*` operator in use. Amazing, right?  
+    Oh, to add, we can also add `("""      """)`, if needed ;)
+    
+    
+- `Lists`:
+    
+    
+
   
   
