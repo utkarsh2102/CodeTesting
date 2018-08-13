@@ -95,32 +95,32 @@ Well, yea, It is! So let's dive in and look at the basics of the language.
 
 ### `Variable Types`
   
-  Remember the times  when you used to asssign the `datatype` to the variables, like `int`, `float`, `char`, etcetra in `C`?  
-  Hehe, gone are the days now to declare the `datatype` of any variable!
-  `Python` is not `statically typed`, rather, it is `object-oriented`!  
-  Neither do we need to declare a variable here, nor it's type. That is because, in `Python`, every `variable` is an `object`.  
-  Want to have a look over it? Let's do it!
+   Remember the times  when you used to asssign the `datatype` to the variables, like `int`, `float`, `char`, etcetra in `C`?  
+   Hehe, gone are the days now to declare the `datatype` of any variable!
+   `Python` is not `statically typed`, rather, it is `object-oriented`!  
+   Neither do we need to declare a variable here, nor it's type. That is because, in `Python`, every `variable` is an `object`.  
+   Want to have a look over it? Let's do it!
   
-  ```
-  name="Utkarsh"   #That's a string!
-  age=18           #Woah, that's an integer!
-  height=165.5     #Oh, a floating point!
-  print(name)
-  print(age)
-  print(height)
-  ```
-  Well, here, as soon as the value is stored to the right of the `assignment operator (=)`, the memory of the `variable` is thereby declared and stored.  
+   ```
+   name="Utkarsh"   # That's a string!
+   age=18           # Woah, that's an integer!
+   height=165.5     # Oh, a floating point!    
+   print(name)
+   print(age)
+   print(height)
+   ```
+   Well, here, as soon as the value is stored to the right of the `assignment operator (=)`, the memory of the `variable` is thereby declared and stored.  
   
-  Let's go through the standard `variable types` we use in `Python`.
-  - `Numbers`
-  - `Strings`
-  - `Lists`
-  - `Tuples`
-  - `Dictionary`
+   Let's go through the standard `variable types` we use in `Python`.
+    - `Numbers`
+    - `Strings`
+    - `Lists`
+    - `Tuples`
+    - `Dictionary`
   
   
-  Oh, don't you complain if the names are not very clear to you, okay?  
-  Instead, let's do these in brief! :D  
+   Oh, don't you complain if the names are not very clear to you, okay?  
+   Instead, let's do these in brief! :D  
 
 - `Numbers`:
  
@@ -201,7 +201,104 @@ Well, yea, It is! So let's dive in and look at the basics of the language.
     
 - `Lists`:
     
-    
+    Heard of `Arrays` in `C`? Well, `lists` in `Python` are quite same as them. They may contain any `varaiable type` and as many as you wish.  
+    You can also iterate `lists` in a fairly simple way. Let us see how.
 
+    ```
+    list1 = []
+    list1.append(1)
+    list1.append(2)
+    list1.append(3)
+    print(list1[0])
+    print(list1[1]) 
+    print(list1[2]) 
+
+    # let's do it via iteration
+    for i in list1:
+        print(i)
+    ```    
+
+    Hehe, can you possibly guess the output for the same?
+    
+    ```
+    OUTPUT: 1
+            2
+            3
+            1
+            2
+            3
+    ```
   
-  
+    Oh, but what if you try to access an index which is not yet assigned?
+    For instance,
+    
+    ```
+    list2 = [12,21,29]
+    print(list2[12])
+    ```
+    
+    What do you think the output would be?  
+    Well, here's that.
+    
+    ```
+    OUTPUT: Traceback (most recent call last):
+    File "<stdin>", line 2, in <module>
+      print(list2[12])
+    IndexError: list index out of range
+    ```
+    
+    Hell, yea! Gives us an error.  
+    But that's what we expected, right?  
+   
+   
+-  `Tuples`:
+    
+    Coming from a `C` background? Well, you must not be knowing `Tuples`, but we have you covered.  
+    Since we now have a thorough idea of what `lists` are, let us understand `tuples`, too.  
+    There's a slight difference b/w `lists` and `tuples`. We've been using `[]` in lists, but here, we'd use `parenthesis ~ ()`.  
+    Oh, also, you cannot change the `tuples`, unlike `lists`, once assigned.  
+    Easy stuff, right?  
+    Let's see an example for the same.
+    
+    ```
+    tupx = (12, 21, 29)
+    tupy = ('tj', 'ut')
+    
+    # the following statement isn't valid, as mentioned above.
+    # tupx[1] = 16
+
+    # so now let's have a new tupple, instead.
+    tupz = tupx + tupy
+    print tupz
+    ```
+    This would print the following:
+    ```
+    (12, 21, 29, 'tj', 'ut')
+    ```
+    
+    Sweet? Let's move to `disctionaries` ;)
+    
+    
+- `Dictionary`:
+   
+   Before getting theoretical, let's understand the concept by a small snippet.  
+   
+   ```
+   dictionary = {"name": "Utkarsh", "age": "18", "sem": "3"}
+   #here "name", "age", "sem" are the key values in the dictionary
+   print(dictionary)
+   print(dictionary["name"])
+
+   dictionary["name"] = Tanisha
+   dictionary["age"] = 19
+   dictionary["sem"] = 5
+
+   print(dictionary)
+   ```
+   That gives us the following output:
+   ```
+   {‘Utkarsh’, ‘18’, ‘3’}
+   Utkarsh
+   {‘Tanisha’, ‘19’, ‘5’}
+   ```
+   
