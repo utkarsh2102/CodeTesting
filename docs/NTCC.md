@@ -301,4 +301,25 @@ Well, yea, It is! So let's dive in and look at the basics of the language.
    Utkarsh
    {‘Tanisha’, ‘19’, ‘5’}
    ```
-   
+   I guess this makes it very clear?  
+   So let's move to `conditions`.  
+
+- `Conditions`:
+ 
+   If `Python` isn't your first language, then you might be thorough 
+with the logic, but not the syntax.  
+   But let us walk through that, too.  
+   For checking conditions, `boolean variables` are often used. The 
+expressions are quite simple and only returns a `true` or `false`.
+   Let us see how.
+  
+   ```
+   x=12
+   print(x==12)  #prints "True"
+   print(x==21)  #prints "False"
+   print(x<29)   #prints "True"
+   ```
+   Quite simple, right?  
+   Well, that's it. You're done with the basics, already ;)  
+
+
