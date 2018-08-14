@@ -322,4 +322,59 @@ expressions are quite simple and only returns a `true` or `false`.
    Quite simple, right?  
    Well, that's it. You're done with the basics, already ;)  
 
+###`Operators`
 
+- `and` & `or`:
+   The `and` and `or` operators are `boolean` operators.  
+   Well, we all know about the intersection of two 
+conditions, right? `and` operator does that exactly. 
+It'll return `true` if the intersection of condition is 
+satisfied.  
+   However, `or` operator will return `true` even when 
+there's one condition that is `true` or satisfies the 
+condition.  
+   Easy stuff? Well, let's have a look.
+   
+   ```
+   if age==19 and name==“Utkarsh”:
+   print("You are Utkarsh and 19.")
+
+   if name=="Utkarsh" or name=="Tanisha":
+   print("You are either Utkarsh or Tanisha.") 
+   ```
+
+- `in`:
+   Well, what would you do if you want to look up 
+something in a big pool of something and there's no 
+`ctrl+F` available?  
+   That's exactly where `in` operator is used.  
+   Let's understand the same with the help of an example.  
+
+   ```
+   if name in [“Utkarsh”, “Anurag”]:
+   print (“Hey, you're in the list!”)
+   ```
+
+- `is`:
+   Remember the `==` operator? Well, `is` is unlike that.  
+   `is` operator tests whether the 2 variables `point` to 
+the same object or not.  
+   Confused? Let's see what it does?  
+
+   ```
+   u = [12,21,29]
+   t = [12,21,29]
+
+   print u is t #it'll return "false"!
+   ```
+   Got it? The `==` would return `true` but not the `is` 
+operator. 
+
+- `not`:
+   Well, what if you're feeling crazy and want to return 
+the reverse of what you're doing?  
+   Haha, no worries. `not` takes care of that. It 
+actually `inverts` the output of the actuall command.  
+   That means you'd get the exact opposite of what you 
+type.  
+   Sounds fun, right? ;)     
