@@ -378,3 +378,46 @@ actually `inverts` the output of the actuall command.
    That means you'd get the exact opposite of what you 
 type.  
    Sounds fun, right? ;)     
+
+
+### `Loops and Funtions`
+
+- `Loops`:
+   
+   Well, I'm pretty sure that you're aware of the literal meaning of the term "loop", right?  
+   It is exactly the same here, too.  
+   `Loop` is just a code that tells the compiler to `iterate` about itself until the end 
+condition is attained or satisfied.  
+   Well, in `python`, we deal with 2 kinds of loops, as follows:
+   
+   - `for`:
+      We use these loops when we know the start and the end condition, or maybe the range.  
+      Let's use both once.
+      
+      ```
+      for u in range(3):
+          print(u)
+          #this'll print out: 0,1,2.
+
+      for t in range(4, 7):
+          print(t)
+          #this'll print out: 4,5,6.
+      ```	
+      
+   - `while`:
+      We use these loops when we don't know how much time we need to run the loop to attain 
+the required output.  
+      Let's use it once, too.
+
+      ```
+      c=0
+      while c<7:
+          print(c)     #you can guess the output, right? ;)
+          count += 1
+      ```
+
+   Well, meanwhile we're using these loops, let us not forget the importance of `continue` and 
+`break` in our codes and thus, lives.  
+   `break` simply throws us out of the loop we're iterating in.  
+   `continue` skips the current iteration and continues with the loop it is iterating in.
+   All clear, right? Let's move to `functions`.
