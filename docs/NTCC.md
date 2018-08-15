@@ -485,37 +485,39 @@ performs it's task and returns the value to it's caller.
 
 ### `Classes and Objects`:
 
-    Oh, so this must be new, right?  
-    Nevermind, let us walk through it, too.  
-    Ever wished for a `template` for any work you do? :P
-    Right, so `classes` does that. It is simply a template to create our `objects`.  
-    There are pretty similiar to `dictionary` but guess what? They have wider advantages ;)  
-    `Definition` is often done by the `class` keyword, followed by the name of the same.  
-    Eh, confusing?  
-    Nevermind, let us see an example of the same.  
+   Oh, so this must be new, right?  
+   Nevermind, let us walk through it, too.  
+   Ever wished for a `template` for any work you do? :P
+   Right, so `classes` does that. It is simply a template to create our `objects`.  
+   There are pretty similiar to `dictionary` but guess what? They have wider advantages ;)  
+   `Definition` is often done by the `class` keyword, followed by the name of the same.  
+   Eh, confusing?  
+   Nevermind, let us see an example of the same.  
 
-    ```
-    class boss:
-        var="name"
-     def function(self):
-        print("We're inside the class. Yayy!")
+   ```
+   class boss:
+       var="name"
+   
+   def function(self):
+       print("We're inside the class. Yayy!")
+   
+   boss1=boss()
+   ```
 
-    boss1=boss()
-    ```
-    Well, here's a little bit of explanation.  
-    `boss1` is the 1st object defined within the class.  
-    Also, the variables of any `objects` can be defined or accessed, simply by writing the
+  Well, here's a little bit of explanation.  
+  `boss1` is the 1st object defined within the class.  
+   Also, the variables of any `objects` can be defined or accessed, simply by writing the
 following statement:  
-    ```
-    boss1.name
-    ```
-    Quite simple, right? ;)
+   ```
+   boss1.name
+   ```
+   Quite simple, right? ;)
 
 ---
 
-    Well, with this we come to an end of knowing `Python`.  
-    We know enough of `python`  to use it in `web scraping`.  
-    Let's take a leap of faith and jump to the same ;)
-    Here we go..
+   Well, with this we come to an end of knowing `Python`.  
+   We know enough of `python`  to use it in `web scraping`.  
+   Let's take a leap of faith and jump to the same ;)
+   Here we go..
 
 ---
