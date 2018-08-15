@@ -19,6 +19,8 @@ Released in 1991, `Python` is a powerful language, ruling the world over.
 Oh, did I forgot to tell you that this language is completely open-source?  
 Well, yea, It is! So let's dive in and look at the basics of the language.
 
+---
+
 ### `Basic Syntaxing`
 
 - Intendation:
@@ -91,7 +93,7 @@ Well, yea, It is! So let's dive in and look at the basics of the language.
   
   That's pretty much it. Let's have a peek in the `Variable Types` in `Python`.
 
-
+---
 
 ### `Variable Types`
   
@@ -161,7 +163,7 @@ Well, yea, It is! So let's dive in and look at the basics of the language.
 
     ```
     OUTPUT: 7
-          7.0
+            7.0
     ```
 
     Hehe, you got what happened, right?  
@@ -322,6 +324,8 @@ expressions are quite simple and only returns a `true` or `false`.
    Quite simple, right?  
    Well, that's it. You're done with the basics, already ;)  
 
+---
+
 ###`Operators`
 
 - `and` & `or`:
@@ -379,6 +383,7 @@ actually `inverts` the output of the actuall command.
 type.  
    Sounds fun, right? ;)     
 
+---
 
 ### `Loops and Funtions`
 
@@ -421,3 +426,63 @@ the required output.
    `break` simply throws us out of the loop we're iterating in.  
    `continue` skips the current iteration and continues with the loop it is iterating in.
    All clear, right? Let's move to `functions`.
+
+
+- `Functions`:  
+
+   `Fucntions`, if simply defined, is a block of code that does a task when called by the 
+programmar.  
+   Well, there often comes this question, why functions?  
+   So, what if there are 200 lines of code that is to be used 5 times in the whole program, 
+would you write that all over again? Or even copy-paste?  
+   No, right? That's where `functions` comes in the picture.  
+   They can be simply read and reused, anywhere and everywhere required. It save human effort 
+and thus time.  
+   Sweet, right?  
+   Let's see how would you define and call these functions.  
+ 
+   - `Function Definition`:  
+
+      Wondering why is there a `def` keyword in a python snippet you might have come across?  
+      Well, that's because these functions start with the word `def`, which tell the compiler 
+that it is a function. It is followed by the `name` of the function and the `input arguements` 
+inside the  brackets ~ `()`.  
+      Let's see the syntax of the same.
+      ```
+      def func_name (arguements):
+      “func docstring”
+      func_suite
+      return [expression];
+      ```
+
+      Well, the term `func docstring` means or tells us about what action will the function 
+perform, in words.  
+      Then comes the `suite`, basically the main body.  
+      And lastly, there's a `return` statement, returning the value to the called and thereby 
+exiting the function.  
+  
+   - `Funtion Calling`:  
+  
+      Well, now, that's easy. You just need to pass the `arguements` to while calling a 
+function.  
+      Once the user inputs the value of the arguements, the function is called. It then 
+performs it's task and returns the value to it's caller.  
+      Just a cakewalk, right?  
+      Let's do some action now.  
+      
+      ```
+      #Let's define the function, again.
+      def func_name (arguements):     
+      “func docstring” 
+      func_suite
+      return [expression];
+      
+      #Let's call it now ;)
+      func_name (arguements)
+      ```
+  
+      Hehe, easy, right? :D
+        
+---
+
+
