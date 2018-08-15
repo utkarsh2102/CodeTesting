@@ -322,16 +322,14 @@ expressions are quite simple and only returns a `true` or `false`.
    Quite simple, right?  
    Well, that's it. You're done with the basics, already ;)  
 
-###`Operators`
+### `Operators`
 
-- `and` & `or`:
+- `and` & `or`:    
    The `and` and `or` operators are `boolean` operators.  
-   Well, we all know about the intersection of two 
-conditions, right? `and` operator does that exactly. 
-It'll return `true` if the intersection of condition is 
-satisfied.  
-   However, `or` operator will return `true` even when 
-there's one condition that is `true` or satisfies the 
+   Well, we all know about the intersection of two conditions, right?  
+   `and` operator does that exactly. It'll return `true` if the intersection of condition is 
+satisfied. 
+   However, `or` operator will return `true` even when there's one condition that is `true` or satisfies the 
 condition.  
    Easy stuff? Well, let's have a look.
    
@@ -343,7 +341,7 @@ condition.
    print("You are either Utkarsh or Tanisha.") 
    ```
 
-- `in`:
+- `in`:  
    Well, what would you do if you want to look up 
 something in a big pool of something and there's no 
 `ctrl+F` available?  
@@ -355,7 +353,7 @@ something in a big pool of something and there's no
    print (“Hey, you're in the list!”)
    ```
 
-- `is`:
+- `is`:  
    Remember the `==` operator? Well, `is` is unlike that.  
    `is` operator tests whether the 2 variables `point` to 
 the same object or not.  
@@ -370,7 +368,7 @@ the same object or not.
    Got it? The `==` would return `true` but not the `is` 
 operator. 
 
-- `not`:
+- `not`:  
    Well, what if you're feeling crazy and want to return 
 the reverse of what you're doing?  
    Haha, no worries. `not` takes care of that. It 
@@ -390,7 +388,7 @@ type.
 condition is attained or satisfied.  
    Well, in `python`, we deal with 2 kinds of loops, as follows:
    
-   - `for`:
+   - `for`:  
       We use these loops when we know the start and the end condition, or maybe the range.  
       Let's use both once.
       
@@ -404,7 +402,7 @@ condition is attained or satisfied.
           #this'll print out: 4,5,6.
       ```	
       
-   - `while`:
+   - `while`:  
       We use these loops when we don't know how much time we need to run the loop to attain 
 the required output.  
       Let's use it once, too.
