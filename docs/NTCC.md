@@ -517,7 +517,30 @@ following statement:
 
    Well, with this we come to an end of knowing `Python`.  
    We know enough of `python`  to use it in `web scraping`.  
-   Let's take a leap of faith and jump to the same ;)
-   Here we go..
+   Let's take a leap of faith and jump to the same ;)  
+   Here we go..  
 
 ---
+
+## `Web Scarping`:
+
+`Web Scraping` or `Web Data Extraction` and `Web Collection` is the process 
+of extract data from websites, access the `World Wide Web` (WWW) using the 
+`Hypertext Transfer Protocol` (HTTP).  
+
+This is the way to completely copy large data in a central local 
+database or in a spreadsheet. This includes the extraction and extraction 
+process. When restoring, the data must be unintentionally downloaded every 
+time we open this page. The extraction of this extracted data can 
+easily take place.  
+
+The most important step in `web scraping` is analyzing the web site where 
+the `web scraper` is located.
+Decide that everything is useful data that they would consider as `"useful 
+data"`. It generally extracts, needs useful data and uses it elsewhere for a 
+different purpose.
+Websites are created with text `markup languages` ​​such as `HTML`, `xHTML`.
+Record it in the same way to make it easier for the user. A `Web Scraper` 
+is a type of `Application Programming Interface` (API) for extracting data 
+from a website.  
+
