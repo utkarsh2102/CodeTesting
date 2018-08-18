@@ -544,3 +544,20 @@ Record it in the same way to make it easier for the user. A `Web Scraper`
 is a type of `Application Programming Interface` (API) for extracting data 
 from a website.  
 
+### `Advantages`:
+
+- `Less Time Consuming`:  
+   Manual data saving for the user can be hard, in order to save huge amount 
+of data easily and quickly, web scraping plays an important part.
+
+
+- `Centralized Data`:  
+   To easilt get high amount of content at our local machine, `Web Scraping` 
+is definitely THE technique you want to use.  
+
+
+- `Inexpensive`:  
+   Well, d'you actually think it'd cost you any much? Web scraping is a low 
+cost service. The job is often done is efficently and in the way which is 
+economically viable.
+
