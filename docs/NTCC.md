@@ -593,3 +593,34 @@ made.
    Well, guess what? All the data, the data scientists get, a part of it 
 comes from `web scraping` ;)  
 
+
+### `Web Scraping Techniques`:  
+
+- `Manual Copy-Paste`:  
+   Well, that's simple, isn't it :P  
+   The data can be extracted manualy by copying the required data and 
+then pasting to the desired location. Well, that is something which 
+works when the scrapers are explicitly prohibited or blocked by several 
+websites. When such a case arises, let your hands do some work ;)  
+
+- `Text Pattern Matching`:  
+   Who knows how powerful languages like Python and Perl can be?  
+   Well, matching text pattern is yet another poweful approach to get 
+the required data based on regular `expression matching facilities`.  
+
+- `HTTP Programming`:  
+   One can use `socket programing` to post HTTP requests to the web 
+server`, which helps in retrieving several `static` and `dynamic` web 
+pages.  
+
+- `Machine Learning`:  
+   To automate the process of extracting the data, we can use 
+technologies like `Machine Learning` and `Computer Vision`, with a 
+perfect blend of `Artifical Intelligence` ;)  
+
+**NOTE**: There are several other techniques which can be adopted in 
+order to scrape the web, like `DOM Parsing`, `Vertical Aggregation`, 
+etcerta.  
+
+**P.S.**: We'll be using `Python Programming` for using `text pattern 
+matching`, the basics of which was covered in the first half.  
