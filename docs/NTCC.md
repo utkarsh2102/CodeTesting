@@ -561,3 +561,35 @@ is definitely THE technique you want to use.
 cost service. The job is often done is efficently and in the way which is 
 economically viable.
 
+### `Applications`:
+
+- `Collecting User Data`:  
+   You might have came across several websites that publish information of the 
+individual, like names, email-s, phone, locality, etcetra.  
+   Saving this data for gaining information of individuals is called 
+`content scraping`, `web indexing` or `data mining`.  
+   These collected data can be used for sociological and economic 
+purposes. Objectives such as assessing product sales, obtaining 
+information about people in one place, brand competiton, or list of real 
+estate, etcetra.
+
+- `Web Page Building`:  
+   Well, we all know that `web pages` are built on text `mark-up 
+languages` like `HTML` and `xHTML`. `Web scraping` can be done on 
+websites to store hige quantity of data and convert them
+in to spreadsheets, database and text files, etcetra.  
+   If we scrape several websites that contain scattered data about a 
+person subject to the internet, we can obtain more advanced material on the 
+same subject. This combined advanced useful data can be obtained from
+data on the net, thereby also helping you to create your own websites.  
+
+- `Data Science`:  
+   Well, in basic terms, as far as data science is concerned, it can 
+be used to extract significant data from the raw, unsigned, unstructural 
+data and then studing it's pattern for extracting the useful 
+information.  
+   The previous reaction is studied and then the future predictions are 
+made.  
+   Well, guess what? All the data, the data scientists get, a part of it 
+comes from `web scraping` ;)  
+
