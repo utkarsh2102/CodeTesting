@@ -657,3 +657,20 @@ functions.
 - `from bs4 import BeautifulSoup`
 
 
+### `Making Web Requests`
+
+Well, since we know the basic functionality of the language, let us make a web request.  
+
+
+`#let's fetch the content at `url` by the get function through HTTP`
+   
+```
+   res=request.get('https://abc.xyz')
+   if(res.status_code!=200):
+       print("Network Error: Status: " +r.status_code)
+       exit()
+```
+
+Well, I believe most of the things were easy to get on. Now, let's wrangle 
+HTML a little with `Beautiful Soup`.  
+
