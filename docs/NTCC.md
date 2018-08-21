@@ -624,3 +624,36 @@ etcerta.
 
 **P.S.**: We'll be using `Python Programming` for using `text pattern 
 matching`, the basics of which was covered in the first half.  
+
+
+### `Setting up a Python as a Web Scraper`:
+
+Well, if you're a little acquainted with Python, you'd know that we'll 
+have to use certain packages in order to attain the desired results.  
+So here, we'd need two packages in order to scrape the require the web page, 
+namely: 
+- `requests`:  
+   For making web request, through `HTTP`.  
+
+- `BeautifulSoup4`:  
+   For the conversion of required data into `HTML` and for it's further processing.  
+
+We can use a simple `pip` command to install both the packages.  
+
+`pip install request BeautifulSoup4`
+
+For now, we'd just need certain functions, like:  
+- `get`
+- `RequestException`
+- `closing`
+- `BeautifulSoup`
+
+In a `Python shell`, we can run the following commands in order to `import` the above 
+functions.  
+
+- `from requests import get`
+- `from requests.exceptions import RequestException`
+- `from contextlib import closing`
+- `from bs4 import BeautifulSoup`
+
+
