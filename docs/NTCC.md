@@ -674,3 +674,20 @@ Well, since we know the basic functionality of the language, let us make a web r
 Well, I believe most of the things were easy to get on. Now, let's wrangle 
 HTML a little with `Beautiful Soup`.  
 
+
+### `Wragling HTML BeautifulSoup`
+
+The funtion, `BeautifulSoup`, selects and extracts raw `HTML strings` that 
+are often downloaded `request.get` statement and then parses them to proceed 
+further. There are a lot of functions including the `BeautifulSoup` existing 
+in the `bs4` python package.  
+
+There's an important aspect, called the `select` method. 
+It helps us choose the `CCSS selectors` behind every part of the text and 
+helps us to locate them as individual elements.  
+
+```
+  soupe = bs4.BeautifulSoup(res.text, ‘html.parser’)
+  soupe.select(‘title’)       
+  #chooses any CSS selectors ;)
+```
