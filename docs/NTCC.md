@@ -691,3 +691,23 @@ helps us to locate them as individual elements.
   soupe.select(‘title’)       
   #chooses any CSS selectors ;)
 ```
+
+
+### `Scraping The Actual Webpage`  
+
+Enough of theory, right?  
+Let's do some hands-on ;)  
+Here, for instance, we'll scrape the `wikipedia page` for `Web Scraping`.  
+For us to begin with that, we should know the basics of `CSS`, but that's 
+easy to learn, isn't it?  
+Also, it is important to `inspect element` to get a clear idea of the 
+classes, etcetra.  
+Let's do it, now :D  
+
+
+Here's a screenshot of the actual `Wiki Page` for `Web Scraping`.
+
+[img web_scraping_wiki_page.png]  
+
+Let's do a bit of coding now ;)  
+
