@@ -746,3 +746,34 @@ All clear, right?
 Let's see the output, we get.   
 
 
+### `Output`: 
+
+
+- Web Scraping
+- Techniques
+- Human copy-and-paste
+- Text pattern matching
+- HTTP programming
+- HTML parsing
+- DOM parsing
+- Vertical aggregation
+- Semantic annotation recognizing
+- Computer vision web-page analysis
+- Software
+- Example tools
+- Javascript tools
+- Web crawling frameworks
+- Legal issues
+- United States
+- The EU
+- Australia
+- Methods to prevent web scraping
+- See also
+- References
+
+
+Sweet, right?  
+We can scrape the wiki page easily, but what if we want the page to be 
+secure? 
+:/  
+Let us see the methods of "preventing" web scraping.
