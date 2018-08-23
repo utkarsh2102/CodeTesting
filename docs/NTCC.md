@@ -711,3 +711,38 @@ Here's a screenshot of the actual `Wiki Page` for `Web Scraping`.
 
 Let's do a bit of coding now ;)  
 
+```
+>>> import bs4
+>>> import requests
+>>> res123= requests.get(‘https://en.wikipedia.org/wiki/Web_scraping’)
+>>> soupe= bs4.BeautifulSoup(res.text, “html.parser”)
+>>> soupe.select (‘.mw-headline’)
+>>> for i in soup.select(‘.mw-headline’):
+...     print(i.text) 
+ 
+```
+
+Did ya'll get what we did here?   
+Let's summarize a bit.  
+
+- `res123` variable stores the output of the `requests.get` statement.  
+   It's make the request through HTTP. It's more of an object, here.  
+
+- Once we save this object into the `soupe` variable as the `HTML parser` as 
+the `tree structure`, we'll now obtain the same text as a class of 
+`beautiful soup` ;)  
+
+- Here, we're trying to scrape the name of the `classes`, thus we shall use 
+a `.` (dot), followed by the name of the class (`mw-headline`, here).
+
+- After we apply the `soupe.select` statement, we shall now get a good 
+amount of data to almost every elemnet of the class we'd want. 
+
+- But here, we only require the `text names` of the calsses. Therefore, we'd 
+apply a look to get that sorted.  
+
+
+All clear, right?   
+Let's see the output, we get.   
+
+
