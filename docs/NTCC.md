@@ -777,3 +777,37 @@ We can scrape the wiki page easily, but what if we want the page to be
 secure? 
 :/  
 Let us see the methods of "preventing" web scraping.
+
+
+### `Methods of Preventing Web Scraping`
+
+Well, there are certain points one could follow in order to prevent the 
+scraping of the web page. They are as follows:  
+
+- When wanting to stop the scraper, we can, manually or by the criteria of 
+`geolocation`, block the `IP Address` of the user who's trying to scrape the 
+content. This way the request sent will not be fetched and hence the 
+scraping would be preventing.   
+
+- Well, we just saw how we possibly can automate the entire scraping process 
+by using languages like Python, Perl, etcetra. Well, what if we use certain 
+tools, like `CAPTCHA`? How would that be by-passed? Can it be? ;)  
+
+- Rendering `Angular` and `React` libraries, modern pages of `JavaScript` 
+would be difficult to break through by the `HTTP requests`. This way we can 
+possibly prevent the page from being scraped to a great extent.  
+
+- Methods like `honeypot`, etcetra can be used to identify such IPs which 
+are using the process of `automated bots` or `crawlers`.  
+
+- Coming to the services, `anti-bot` and `anto-scraping` services are 
+globally provided by the market to make the content scrape-prove. By using 
+them, one can possibly reduce scraping to a great extent.  
+
+
+
+Well, that was pretty much it. Hope this document helps you develop a lil' 
+interest in `Web Scraping` ;)  
+
+---
+
