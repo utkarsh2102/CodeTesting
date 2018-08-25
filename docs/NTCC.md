@@ -561,6 +561,8 @@ is definitely THE technique you want to use.
 cost service. The job is often done is efficently and in the way which is 
 economically viable.
 
+---
+
 ### `Applications`:
 
 - `Collecting User Data`:  
@@ -593,6 +595,7 @@ made.
    Well, guess what? All the data, the data scientists get, a part of it 
 comes from `web scraping` ;)  
 
+---
 
 ### `Web Scraping Techniques`:  
 
@@ -622,9 +625,10 @@ perfect blend of `Artifical Intelligence` ;)
 order to scrape the web, like `DOM Parsing`, `Vertical Aggregation`, 
 etcerta.  
 
-**P.S.**: We'll be using `Python Programming` for using `text pattern 
+**P.S.** We'll be using `Python Programming` for using `text pattern 
 matching`, the basics of which was covered in the first half.  
 
+---
 
 ### `Setting up a Python as a Web Scraper`:
 
@@ -656,8 +660,9 @@ functions.
 - `from contextlib import closing`
 - `from bs4 import BeautifulSoup`
 
+---
 
-### `Making Web Requests`
+### `Making Web Requests`:
 
 Well, since we know the basic functionality of the language, let us make a web request.  
 
@@ -674,8 +679,9 @@ Well, since we know the basic functionality of the language, let us make a web r
 Well, I believe most of the things were easy to get on. Now, let's wrangle 
 HTML a little with `Beautiful Soup`.  
 
+---
 
-### `Wragling HTML BeautifulSoup`
+### `Wrangling HTML with BeautifulSoup`:
 
 The funtion, `BeautifulSoup`, selects and extracts raw `HTML strings` that 
 are often downloaded `request.get` statement and then parses them to proceed 
@@ -691,7 +697,7 @@ helps us to locate them as individual elements.
   soupe.select(‘title’)       
   #chooses any CSS selectors ;)
 ```
-
+---
 
 ### `Scraping The Actual Webpage`  
 
@@ -745,6 +751,7 @@ apply a look to get that sorted.
 All clear, right?   
 Let's see the output, we get.   
 
+---
 
 ### `Output`: 
 
@@ -778,6 +785,7 @@ secure?
 :/  
 Let us see the methods of "preventing" web scraping.
 
+---
 
 ### `Methods of Preventing Web Scraping`
 
