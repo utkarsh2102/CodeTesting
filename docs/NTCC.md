@@ -819,3 +819,28 @@ interest in `Web Scraping` ;)
 
 ---
 
+## Discussion
+
+`Web Scraping` is an effective way of storing data from web pages to the local directory, 
+study them and perform further tasks on it. Study of `CSS selectors` is done before scraping a 
+website, and accordingly the required data is downloaded through looping out of all the data 
+on the webpage. `Python` as an `object-oriented language` and its accessibility to free 
+modules makes this task a lot easier.  
+
+With the help of different modules within `Python`, we can perform various tasks with the
+downloaded data within the code. For example, when economists or data scientists work with
+numeric data, representation is required graphically, in tabular form etc. `Python` with the 
+help of modules allows us to access these features easily, thus helping us to not only scrape 
+data from websites but also analyse them in a simple fashion.  
+
+`Web scraping` as we now know is a legally grey area, its legality hasn’t been made clear, it 
+simply depends on the owner of the web page. Thus, it is important to keep legality object in our 
+minds before scraping any websites. Illegal use of the scraped data can even drag the matter to the
+court.  
+
+Where there are websites protecting their personal data, there are also some immersive 
+websites that extremely support web scraping and its effortless way of working and providing us with 
+huge data that we require easily. `Google` and `Amazon` are the best examples for the same and 
+even have built their own website scraping software, making the process even easier.  
+
+---
