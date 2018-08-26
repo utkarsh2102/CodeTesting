@@ -713,7 +713,7 @@ Let's do it, now :D
 
 Here's a screenshot of the actual `Wiki Page` for `Web Scraping`.
 
-[img web_scraping_wiki_page.png]  
+![Web Scraping Wikipedia](/assets/Web_scraping.png)  
 
 Let's do a bit of coding now ;)  
 
