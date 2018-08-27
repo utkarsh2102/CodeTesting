@@ -1,5 +1,22 @@
 # `Scraping` the `Web` using `Python`! :D
 
+## Abstract
+
+Data is what surrounds us in this world of technology. Data exists in
+various forms of databases, spreadsheets, paragraphs, texts etc. and we
+all require them for different tasks. But where do we get this data from?
+Our answer is, of course, the world wide web, the internet. Saving data
+directly into our local drives for studying, and further performing various
+tasks can involve various methodologies, simplest of all is manually
+copying and pasting data, but this won’t help us store huge amount of
+data, that data scientists, sociologists, economists etc shall require. Here
+is where, `WEB SCRAPING` comes into place, that helps us to scrape out web
+pages, helps us easily to store all their vast data. In this term paper we
+shall perform web scraping using python programming language and its
+various modules.
+
+---
+
 ## `Python 101`
 
 `Python` is an extremely basic dialect, and has an exceptionally clear syntax.
