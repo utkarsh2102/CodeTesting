@@ -24,17 +24,17 @@ It urges software engineers to program without standard (arranged) code.
 The least complex order in `Python` is the `print` mandate - it essentially prints out a line (and furthermore incorporates a new line, not at all like in `C`).  
 
 There are two noteworthy `Python` variants, `Python2` and `Python3`.
-`Python2` and `3` are altogether different from one another.
+`Python2` and `Python3` are altogether different from one another.
 This paper utilizes `Python3`, since it all the more semantically right and incorporates even new features.
 
-For instance, one contrast between `Python2` and 3 is the `print` articulation.
+For instance, one contrast between `Python2` and `Python3` is the `print` articulation.
 In `Python2`, the `print` statement is not a function, and in this way it is summoned without enclosures (brackets).
 Be that as it may, in `Python3`, it is a function, and must be conjured with enclosures.  
 
 `Python` is not only `object-oriented` but also a `funtional paradigm`.
 Released in 1991, `Python` is a powerful language, ruling the world over.  
 Oh, did I forgot to tell you that this language is completely open-source?  
-Well, yea, It is! So let's dive in and look at the basics of the language.
+Well, yeah, it is! So let's dive in and look at the basics of the language.
 
 ---
 
@@ -761,7 +761,7 @@ a `.` (dot), followed by the name of the class (`mw-headline`, here).
 - After we apply the `soupe.select` statement, we shall now get a good 
 amount of data to almost every elemnet of the class we'd want. 
 
-- But here, we only require the `text names` of the calsses. Therefore, we'd 
+- But here, we only require the `text names` of the classes. Therefore, we'd 
 apply a look to get that sorted.  
 
 
