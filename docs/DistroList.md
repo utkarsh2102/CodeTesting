@@ -5,4 +5,6 @@
 - Manjaro 17.1 (Hakoila)
 - Debian 10 (Buster)
 - Mint 19 (Tara)
+- Kali
+- Arch 
 
