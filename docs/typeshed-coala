@@ -1,0 +1,284 @@
+➜  ~ source coala-work/bin/activate
+(coala-work) ➜  ~ cd Desktop/typeshed
+(coala-work) ➜  typeshed git:(master) ✗ coala
+[WARNING][01:38:25] Section `all.todos` contain invalid language setting: 'Language `python3` is not a valid language name or not recognized by coala.'
+Executing section all...
+[WARNING][01:38:29] No files matching '/home/utkarsh2102/Desktop/typeshed/*.py' were found. If this rule is not required, you can remove it from section [all] in your .coafile to deactivate
+this warning.
+[WARNING][01:38:29] No files matching '/home/utkarsh2102/Desktop/typeshed/.moban.dt/*.py.in' were found. If this rule is not required, you can remove it from section [all] in your .coafile to
+deactivate this warning.
+[WARNING][01:38:29] No files matching '/home/utkarsh2102/Desktop/typeshed/bears/**/*.py' were found. If this rule is not required, you can remove it from section [all] in your .coafile to
+deactivate this warning.
+Executing section all.python...
+[WARNING][01:38:29] No files matching '/home/utkarsh2102/Desktop/typeshed/*.py' were found. If this rule is not required, you can remove it from section [all.python] in your .coafile to
+deactivate this warning.
+[WARNING][01:38:29] No files matching '/home/utkarsh2102/Desktop/typeshed/.moban.dt/*.py.in' were found. If this rule is not required, you can remove it from section [all.python] in your
+.coafile to deactivate this warning.
+[WARNING][01:38:29] No files matching '/home/utkarsh2102/Desktop/typeshed/bears/**/*.py' were found. If this rule is not required, you can remove it from section [all.python] in your .coafile
+to deactivate this warning.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/pytype_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/pytype_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/pytype_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/pytype_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/pytype_test.py' from 'QuotesBear'.
+[INFO][01:38:30] Applied 'ApplyPatchAction' on 'tests/pytype_test.py' from 'QuotesBear'.
+Executing section all.flakes...
+[WARNING][01:38:30] No files matching '/home/utkarsh2102/Desktop/typeshed/*.py' were found. If this rule is not required, you can remove it from section [all.flakes] in your .coafile to
+deactivate this warning.
+[WARNING][01:38:30] No files matching '/home/utkarsh2102/Desktop/typeshed/.moban.dt/*.py.in' were found. If this rule is not required, you can remove it from section [all.flakes] in your
+.coafile to deactivate this warning.
+[WARNING][01:38:30] No files matching '/home/utkarsh2102/Desktop/typeshed/bears/**/*.py' were found. If this rule is not required, you can remove it from section [all.flakes] in your .coafile
+to deactivate this warning.
+Executing section all.autopep8...
+[WARNING][01:38:35] No files matching '/home/utkarsh2102/Desktop/typeshed/*.py' were found. If this rule is not required, you can remove it from section [all.autopep8] in your .coafile to
+deactivate this warning.
+[WARNING][01:38:35] No files matching '/home/utkarsh2102/Desktop/typeshed/.moban.dt/*.py.in' were found. If this rule is not required, you can remove it from section [all.autopep8] in your
+.coafile to deactivate this warning.
+[WARNING][01:38:35] No files matching '/home/utkarsh2102/Desktop/typeshed/bears/**/*.py' were found. If this rule is not required, you can remove it from section [all.autopep8] in your
+.coafile to deactivate this warning.
+[WARNING][01:38:37] PycodestyleBear: Exit code 1
+[INFO][01:38:37] Applied 'ApplyPatchAction' on 'tests/mypy_selftest.py' from 'PEP8Bear'.
+[WARNING][01:38:37] PycodestyleBear: Exit code 1
+[INFO][01:38:37] Applied 'ApplyPatchAction' on 'tests/mypy_selftest.py' from 'PEP8Bear'.
+
+tests/mypy_selftest.py
+[WARNING][01:38:37] PycodestyleBear: Exit code 1
+[WARNING][01:38:37] PycodestyleBear: Exit code 1
+[  14] ········subprocess.run(['python2.7',·'-m',·'pip',·'install',·'--user',·'typing'],·check=True)
+**** PycodestyleBear (E501) [Section: all.autopep8 | Severity: NORMAL] ****
+!    ! E501 line too long (93 > 80 characters)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 2
+
+Too long lines make code very difficult to read and maintain.
+
+Splitting long lines of code into multiple shorter lines whenever
+possible. Avoiding the usage of in-line language specific constructs
+whenever they result in too long lines.
+
+[    ] The action was executed successfully.
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 3
+!    ! Please enter a value for the parameter 'language' (No description given.): #ignore
+[WARNING][01:39:13] coala does not support Ignore in "#ignore". Consider opening an issue at https://github.com/coala/coala/issues so we can
+add support for this language.
+[    ] An ignore comment was added to your source code.
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ] Enter number (Ctrl-D to exit): 0
+[INFO][01:39:18] Applied 'ApplyPatchAction' on 'tests/check_consistent.py' from 'PEP8Bear'.
+[INFO][01:39:18] Applied 'ApplyPatchAction' on 'tests/check_consistent.py' from 'PEP8Bear'.
+[INFO][01:39:18] Applied 'ApplyPatchAction' on 'tests/check_consistent.py' from 'PEP8Bear'.
+[INFO][01:39:18] Applied 'ApplyPatchAction' on 'tests/check_consistent.py' from 'PEP8Bear'.
+
+tests/check_consistent.py
+[  12] ····{'stdlib/2/os2emxpath.pyi',·'stdlib/2/posixpath.pyi',·'stdlib/2/ntpath.pyi',·'stdlib/2/macpath.pyi'},
+**** PycodestyleBear (E501) [Section: all.autopep8 | Severity: NORMAL] ****
+!    ! E501 line too long (105 > 80 characters)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+[INFO][01:39:20] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'PEP8Bear'.
+[INFO][01:39:20] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'PEP8Bear'.
+[INFO][01:39:20] Applied 'ApplyPatchAction' on 'tests/mypy_test.py' from 'PEP8Bear'.
+
+tests/mypy_test.py
+[  21] ·············································'Patterns·are·unanchored·regexps·on·the·full·path.')
+**** PycodestyleBear (E501) [Section: all.autopep8 | Severity: NORMAL] ****
+!    ! E501 line too long (97 > 80 characters)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+[INFO][01:39:21] Applied 'ApplyPatchAction' on 'tests/pytype_test.py' from 'PEP8Bear'.
+
+tests/pytype_test.py
+[ 287] if·__name__·==·'__main__':
+**** PycodestyleBear (E305) [Section: all.autopep8 | Severity: NORMAL] ****
+!    ! E305 expected 2 blank lines after class or function definition, found 1
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+Executing section all.linelength...
+[WARNING][01:39:22] No files matching '/home/utkarsh2102/Desktop/typeshed/*.py' were found. If this rule is not required, you can remove it
+from section [all.linelength] in your .coafile to deactivate this warning.
+[WARNING][01:39:22] No files matching '/home/utkarsh2102/Desktop/typeshed/.moban.dt/*.py.in' were found. If this rule is not required, you can
+remove it from section [all.linelength] in your .coafile to deactivate this warning.
+[WARNING][01:39:22] No files matching '/home/utkarsh2102/Desktop/typeshed/bears/**/*.py' were found. If this rule is not required, you can
+remove it from section [all.linelength] in your .coafile to deactivate this warning.
+
+tests/mypy_selftest.py
+[  16] ········subprocess.run(['git',·'clone',·'--depth',·'1',·'git://github.com/python/mypy',
+**** LineLengthBear [Section: all.linelength | Severity: NORMAL] ****
+!    ! Line is longer than allowed. (87 > 80)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+
+tests/mypy_selftest.py
+[  19] ························str(dirpath·/·'mypy/test-requirements.txt')],·check=True)
+**** LineLengthBear [Section: all.linelength | Severity: NORMAL] ****
+!    ! Line is longer than allowed. (81 > 80)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+
+tests/mypy_test.py
+[  21] ·············································'Patterns·are·unanchored·regexps·on·the·full·path.')
+**** LineLengthBear [Section: all.linelength | Severity: NORMAL] ****
+!    ! Line is longer than allowed. (97 > 80)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+
+tests/mypy_test.py
+[  85] ····with·open(os.path.join(os.path.dirname(__file__),·'mypy_blacklist.txt'))·as·f:
+**** LineLengthBear [Section: all.linelength | Severity: NORMAL] ****
+!    ! Line is longer than allowed. (82 > 80)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+
+tests/mypy_test.py
+[  98] ····················if·any(('%d.%d'·%·v).startswith(av)·for·av·in·args.python_version)]
+**** LineLengthBear [Section: all.linelength | Severity: NORMAL] ****
+!    ! Line is longer than allowed. (87 > 80)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+
+tests/check_consistent.py
+[  19] ····{'stdlib/3/concurrent/__init__.pyi',·'third_party/2/concurrent/__init__.pyi'},
+**** LineLengthBear [Section: all.linelength | Severity: NORMAL] ****
+!    ! Line is longer than allowed. (82 > 80)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+
+tests/check_consistent.py
+[  37] ····no_symlink·=·'You·cannot·use·symlinks·in·typeshed,·please·copy·{}·to·its·link.'
+**** LineLengthBear [Section: all.linelength | Severity: NORMAL] ****
+!    ! Line is longer than allowed. (83 > 80)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+
+tests/check_consistent.py
+[  47] ················raise·ValueError('File·{f1}·does·not·match·file·{f2}.·Please·copy·it·to·{f2}'.format(
+**** LineLengthBear [Section: all.linelength | Severity: NORMAL] ****
+!    ! Line is longer than allowed. (101 > 80)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Print (M)ore info
+[    ]  3. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+Executing section all.CI...
+[WARNING][01:40:28] No files matching '/home/utkarsh2102/Desktop/typeshed/.ci/*' were found. If this rule is not required, you can remove it
+from section [all.CI] in your .coafile to deactivate this warning.
+Executing section all.commit...
+[WARNING][01:40:29] No files matching '/home/utkarsh2102/Desktop/typeshed/*.py' were found. If this rule is not required, you can remove it
+from section [all.commit] in your .coafile to deactivate this warning.
+[WARNING][01:40:29] No files matching '/home/utkarsh2102/Desktop/typeshed/.moban.dt/*.py.in' were found. If this rule is not required, you can
+remove it from section [all.commit] in your .coafile to deactivate this warning.
+[WARNING][01:40:29] No files matching '/home/utkarsh2102/Desktop/typeshed/bears/**/*.py' were found. If this rule is not required, you can
+remove it from section [all.commit] in your .coafile to deactivate this warning.
+
+Project wide:
+**** GitCommitBear [Section: all.commit | Severity: NORMAL] ****
+!    ! Shortlog of the HEAD commit contains 60 character(s). This is 10 character(s) longer than the limit (60 > 50).
+Executing section rst...
+[WARNING][01:40:32] No files matching '/home/utkarsh2102/Desktop/typeshed/**.rst' were found. If this rule is not required, you can remove it
+from section [rst] in your .coafile to deactivate this warning.
+Executing section all.PythonPackageInit...
+[WARNING][01:40:32] No files matching '/home/utkarsh2102/Desktop/typeshed/*.py' were found. If this rule is not required, you can remove it
+from section [all.PythonPackageInit] in your .coafile to deactivate this warning.
+[WARNING][01:40:32] No files matching '/home/utkarsh2102/Desktop/typeshed/.moban.dt/*.py.in' were found. If this rule is not required, you can
+remove it from section [all.PythonPackageInit] in your .coafile to deactivate this warning.
+[WARNING][01:40:32] No files matching '/home/utkarsh2102/Desktop/typeshed/bears/**/*.py' were found. If this rule is not required, you can
+remove it from section [all.PythonPackageInit] in your .coafile to deactivate this warning.
+
+Project wide:
+**** PythonPackageInitBear [Section: all.PythonPackageInit | Severity: NORMAL] ****
+!    ! Directory "tests" does not contain __init__.py file
+Executing section all.yml...
+[WARNING][01:40:33] No files matching '/home/utkarsh2102/Desktop/typeshed/tests/**/*.yml' were found. If this rule is not required, you can
+remove it from section [all.yml] in your .coafile to deactivate this warning.
+[WARNING][01:40:33] No files matching '/home/utkarsh2102/Desktop/typeshed/*.yaml' were found. If this rule is not required, you can remove it
+from section [all.yml] in your .coafile to deactivate this warning.
+[WARNING][01:40:33] No files matching '/home/utkarsh2102/Desktop/typeshed/.ci/*.yml' were found. If this rule is not required, you can remove
+it from section [all.yml] in your .coafile to deactivate this warning.
+[WARNING][01:40:33] YAMLLintBear: Exit code 1
+
+.travis.yml
+[  26] ··-·if·[[·$INSTALL·==·'test'·]];·then·pip·install·-r·requirements-tests-py3.txt;·fi
+**** YAMLLintBear [Section: all.yml | Severity: MAJOR] ****
+!    ! line too long (83 > 80 characters) (line-length)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+
+.travis.yml
+[  27] ··-·if·[[·$INSTALL·==·'mypy'·]];·then·pip·install·-U·git+git://github.com/python/mypy·git+git://github.com/python/typed_ast;·fi
+**** YAMLLintBear [Section: all.yml | Severity: MAJOR] ****
+!    ! line too long (127 > 80 characters) (line-length)
+[    ] *0. Do (N)othing
+[    ]  1. (O)pen file
+[    ]  2. Add (I)gnore comment
+[    ] Enter number (Ctrl-D to exit): 0
+Executing section bash...
+[WARNING][01:40:36] No files matching '/home/utkarsh2102/Desktop/typeshed/.ci/*.sh' were found. If this rule is not required, you can remove
+it from section [bash] in your .coafile to deactivate this warning.
+[ERROR][01:40:36] The bear ShellCheckBear does not fulfill all requirements. 'shellcheck' is not installed.
+Executing section jinja2...
+[WARNING][01:40:37] No files matching '/home/utkarsh2102/Desktop/typeshed/**.jj2' were found. If this rule is not required, you can remove it
+from section [jinja2] in your .coafile to deactivate this warning.
+Executing section cli...
+(coala-work) ➜  typeshed git:(master) ✗ 
