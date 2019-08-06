@@ -35,4 +35,255 @@ Thus, Debian.
 
 This brings us to the [packaging](https://wiki.debian.org/Packaging) wiki, which tells us the basics of `how-to`. Clearly enough, the first step is to set up your `system/host environment`.  
 Also, for this report, we'd be packaging a free and open source software called `Loomio` for Debian.  
-**Loomio** helps in making `collaborative decision making`. This has been proved..
+**Loomio** helps in making `collaborative decision making`. This has proved to be quite helpful for a lot of threads that couldn't come up to a single, simple decision.  
+A lot of core developers have been using it and thus we'd be packaging this for the Debian repositories.  
+Loomio is mostly written in `Ruby`, but also includes some `JavaScript` and `CoffeeScript`.  
+Now, here's something interesting about Debian. For a software to be packaged for the apt repositories, all the dependencies of that software needs to be packaged separately and uploaded to the archive.  
+A package can not install a gem or a module via `gem install xyz` or via `npm install xyz`. Using "internet" while `building` a package is prohibited, as per the Debian policy.  
+Thus the idea is to package all the dependencies first and then the main package Loomio and make it `apt-installable` on the Debian machines.
+
+---
+
+## Project Details
+
+The package, Loomio, has around over **30 unpackaged Ruby gems** (which are directly needed, as shown by the tracker), over **30 gems** that have **unsatisfiable dependency versions**, and around **10-15 unpackaged sub-dependencies**. In _total_, for the `Ruby` side of the code, we have **70-75 gems** that are needed to be taken care of, under the `Ruby team`. Hovering over the source code of Loomio also tells us the need to ensure the packaging of `fonts` under the `Debian Fonts Task Force` team. Also, for the same, we will need to package **mdi (2.2.43)** and also check with the `roboto-fonts`, as **roboto-v18-*** is needed for Loomio.  
+Coming towards the **JavaScript** and the **CoffeeScript** section, we will need to package a few `simple modules` and a couple of `complex JS packages`, as needed by Loomio and mentioned in the `package.json` file, under the `client` directory of Loomio. If summed up, an `approximate` of **20-25 new modules** will be needed to package and a handful would be needed to **update**, **fix and embed**, under the `JavaScript team`.  
+However, the **three packages** that could be `tricky` and `important` are **loomio-angular-router**, **loomio-angular-marked**, which have a couple of `sub-dependencies` themselves and **node-lodash**, whose `transition` might prove to be complex, as it has around **33 reverse dependencies**, including some key packages like **webpack**.  
+Once all the `dependencies` and `sub-dependencies` are successfully `packaged` and `uploaded`, then would come the main package, **Loomio**. It is a fairly `big and complex` package with over **484 directories** and **4607 files** as a part of it’s code base. For the same, we’ll need to write a **pre/post-inst** and a **pre/post-rm** script to set the `configuration` the right way, including all the `symlinks` that are needed for `smooth installation`.  
+
+**NOTE**: There are a lot of packages (~27) with `test failures` which are to be fixed before we can proceed. Hence, a good amount of Ruby and JavaScript knowledge would be needed for the same. Some pictures that are not following the `DFSG` would need to be `removed` and the `upstream tarball` would need to be `repacked`. Also, we’ll have to create our own personal repository (via `reprepro`) in order to test the successful installation of Loomio as it takes time for the package to clear the `NEW queue`.  
+
+---
+
+## Setting up the Environment
+
+Well, of course, setting up the required `env` for packaging is important. You cannot just package a software for `Debian Buster` on `Windows`,  or on any other `operating system` or any other `Linux distribution`, unless you set up the environment to do so.  
+Setting up `envs` can be a pain, but let's make it as easier as it could get.  
+There are a few `configuration` files (or **.*rc** files) that are needed to be edited.  
+Here are the following ways you could set the packaging environment:  
+- You can either set up a `Virtual Machine`.  
+- Or, if you're on some other Linux `distro`, you can use `docker` via:  
+    `$ docker run -it debian:unstable`  
+- And, the best way would be to set up the host machine (your own local machine) as `Debian Unstable` (which is `bullseye`, at the moment).  
+
+To get Debian unstable as your host, there are a couple of ways, too.  
+But the most recommended way is to get the `*netinst* ISO image` from the debian.org and convert it into unstable via:  
+- Change your `/etc/apt/sources.list` file to point to "unstable".  
+- Run `apt update` and `apt full-upgrade`.  
+
+Once the host is set, there are a couple of `configs` that are needed to be set as well.  
+- Creating `~/.lintianrc` with suitable flags.  
+- Appending `~/.zshrc` for `lintian`, releated stuff.  
+- Writing `~/.quiltrc` with appropriate tags.  
+- Creating `~/.sbuildrc` for being able to test packages in a clean `chroot` environment.  
+
+Also, don't forget to install the basic packages like `npm2deb`, `gem2deb`, `git-buildpackage`, `devscripts`, `lintian`, `sbuild`, `quilt`, et al, via `apt`.  
+
+---
+
+## Packaging 101
+
+There are various ways of making and building a `.deb` package. However, we'll take in account the easiest and the most common one.  
+`dh`, `dh_make` are the root of all the things. `dh` stands for `debhelper`. Check it's `man` page for more information, if you need.  
+Using `gem2deb`, `npm2deb` creates a basic template for a `Ruby` package and a `Node` package, respectively. Once done, they fetch the upstrem repository and _initalize_ the `debian/` folder inside the fetched repository.  
+In addition to this, they also create 3 branches, namely, `pristine-tar`, `upstream`, and `master`. The `master` branch has the upstream repository with the `debian/*` files with it. The `upstream` branch just has the **original** upstream repository. And the `pristine-tar` branch has all the metadata and stuff. Not needed, for now.  
+
+Now, when all the files inside the `debian/` are formatted properly (with the help of the debian `wiki`), we proceed for a `local build` via the command:  
+`$ dpkg-buildpackage -uc -us`  
+Run `ls ..` from outside the `debian/` folder and you'll notice the following the following directories and files (taking example of a `node module`, called `node-pretty-hrtime`):  
+- Directories:  
+    - `node-pretty-hrtime/`: Debian packaging work directory (`debian` directory).  
+    - `node-pretty-hrtime-1.0.3/`: Debian packaging work directory (`upstream` sources `+` `debian` directory).  
+
+- Packages:  
+    - `node-pretty-hrtime_1.0.3-1_all.deb`: Debian `Binary` package.  
+    - `node-pretty-hrtime_1.0.3-1.debian.tar.xz`: Debian `Source` package.  
+
+- Upstream sources:  
+    - `node-pretty-hrtime-1.0.3.tar.gz`: Upstream `tarball`.  
+    - `node-pretty-hrtime_1.0.3.orig.tar.gz`: `Symlink` to upstream tarball (node-pretty-hrtime-1.0.3.tar.gz).  
+
+- Building informations:  
+    - `node-pretty-hrtime_1.0.3-1_amd64.buildinfo`: `Building informations` during packaging job.  
+
+- Changes:  
+    - `node-pretty-hrtime_1.0.3-1.dsc`: `.dsc` file summarizes information in debian directory (just picks some important fields) and adds checksum for the tar files which will use to build the .deb file [1].  
+    - `node-pretty-hrtime_1.0.3-1_amd64.changes`: `.changes` is similar to `.dsc`, but has additional checksums for .dsc and .deb files too. DDs (Debian Developer) sign the changes file with their GPG key, so DDs know the checksums are not modified [1].  
+
+(1): `https://wiki.debian.org/Javascript/Nodejs/Npm2Deb/Tutorial`
+
+### Convert Source Package to Git Repository
+
+```
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime $ rm -r node-pretty-hrtime  
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime $ gbp import-dsc --pristine-tar node-pretty-hrtime_1.0.3-1.dsc  
+gbp:info: No git repository found, creating one.  
+gbp:info: Version '1.0.3-1' imported under '/home/utkarsh2102/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime'  
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime $ cd node-pretty-hrtime  
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime $ git status  
+On branch master  
+nothing to commit, working tree clean  
+```
+
+### Pushing Source Package to Salsa
+
+```
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime $ git remote -v  
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime $ git remote add salsa-utkarsh2102-guest git@salsa.debian.org:utkarsh2102-guest/pkg-loomio-application-tasks-node-pretty-hrtime.git  
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime $ git remote -v  
+salsa-utkarsh2102-guest	git@salsa.debian.org:utkarsh2102-guest/pkg-loomio-application-tasks-node-pretty-hrtime.git (fetch)  
+salsa-utkarsh2102-guest	git@salsa.debian.org:utkarsh2102-guest/pkg-loomio-application-tasks-node-pretty-hrtime.git (push)  
+```
+
+```
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime $ git --no-pager branch  
+* master  
+  pristine-tar  
+  upstream  
+```
+
+```
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime $ git push salsa-utkarsh2102-guest master  
+Enumerating objects: 31, done.  
+Counting objects: 100% (31/31), done.  
+Delta compression using up to 8 threads  
+Compressing objects: 100% (25/25), done.  
+Writing objects: 100% (31/31), 7.22 KiB | 3.61 MiB/s, done.  
+Total 31 (delta 4), reused 0 (delta 0)  
+To salsa.debian.org:utkarsh2102-guest/pkg-loomio-application-tasks-node-pretty-hrtime.git  
+ * [new branch]      master -> master  
+```
+
+```
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime $ git push salsa-utkarsh2102-guest upstream  
+Total 0 (delta 0), reused 0 (delta 0)  
+remote: To create a merge request for upstream, visit: https://salsa.debian.org/utkarsh2102-guest/pkg-loomio-application-tasks-node-pretty-hrtime/merge_requests/new?merge_request%5Bsource_branch%5D=upstream  
+remote: To salsa.debian.org:utkarsh2102-guest/pkg-loomio-application-tasks-node-pretty-hrtime.git  
+ * [new branch]      upstream -> upstream  
+```
+
+```
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime $ git push salsa-utkarsh2102-guest pristine-tar  
+Enumerating objects: 4, done.  
+Counting objects: 100% (4/4), done.  
+Delta compression using up to 8 threads  
+Compressing objects: 100% (3/3), done.  
+Writing objects: 100% (4/4), 1.68 KiB | 1.68 MiB/s, done.  
+Total 4 (delta 0), reused 0 (delta 0)  
+remote: To create a merge request for pristine-tar, visit: https://salsa.debian.org/utkarsh2102-guest/pkg-loomio-application-tasks-node-pretty-hrtime/merge_requests/new?merge_request%5Bsource_branch%5D=pristine-tar  
+remote: To salsa.debian.org:utkarsh2102-guest/pkg-loomio-application-tasks-node-pretty-hrtime.git  
+ * [new branch]      pristine-tar -> pristine-tar  
+```
+
+```
+utkarsh2102@debian ~/js-team/pretty-hrtime/pretty-hrtime/node-pretty-hrtime $ git push salsa-utkarsh2102-guest master --tags  
+Enumerating objects: 2, done.  
+Counting objects: 100% (2/2), done.  
+Delta compression using up to 8 threads  
+Compressing objects: 100% (2/2), done.  
+Writing objects: 100% (2/2), 318 bytes | 318.00 KiB/s, done.  
+Total 2 (delta 0), reused 0 (delta 0)  
+To salsa.debian.org:utkarsh2102-guest/pkg-loomio-application-tasks-node-pretty-hrtime.git  
+ * [new tag]         debian/1.0.3-1 -> debian/1.0.3-1  
+ * [new tag]         upstream/1.0.3 -> upstream/1.0.3  
+ ```
+
+---
+
+## Work Done on Dependencies for Loomio
+
+The following dependencies were packaged and uploaded to the archive.  
+» ruby-ahoy-matey  
+» ruby-aws-partitions  
+» ruby-aws-sdk-core  
+» ruby-aws-sdk-kms  
+» ruby-aws-sdk-s3  
+» ruby-aws-sigv4  
+» ruby-geocoder  
+» ruby-terrapin  
+» ruby-devise-i18n  
+» ruby-discourse-diff  
+» ruby-discriminator  
+» ruby-doorkeeper-i18n  
+» ruby-iso  
+» ruby-referer-parser  
+» node-array-union  
+» node-async-stacktrace  
+» node-diacritics  
+» node-dot-prop  
+» node-flush-write-stream  
+» node-irregular-plurals  
+» node-loud-rejection  
+
+The following dependencies have been packaged but are yet to be uploaded:  
+» ruby-cancancan  
+» ruby-google-cloud-env  
+» ruby-google-cloud-core  
+» ruby-google-cloud-translate  
+» node-make-dir  
+» node-plur  
+» node-strip-ansi  
+
+The following packages were updated and uploaded:  
+» ruby-pg  
+» ruby-activerecord-import  
+
+The following dependencies have been fixed for autopkgtest:  
+» ruby-paperclip (took a lot of time to debug :/)  
+» ruby-maxminddb  
+» node-tmp  
+
+In the following process, I discovered a new option that could be passed to `dh_ruby`, which is `export DH_RUBY_GEM_INSTALL_WHITELIST_APPEND`.  
+This was needed for `ruby-aws-partitions` as `test-suite` of `ruby-paperclip` needed `partitions.json`, thus the need. Thanks to the `man page` of dh_ruby.  
+
+### Other Activities within Debian
+
+Since I became a `Debian Maintainer`, I had various other roles to perform.  
+Thus I packaged the following modules and helped in:  
+» speedtest-cli  
+» blurb  
+» libfuture-asyncawait-perl  
+» libasync-interrupt-perl  
+» libbareword-filehandles-perl  
+» libcompress-raw-bzip2-perl  
+» libcompress-raw-lzma-perl  
+» libcompress-raw-zlib-perl  
+» libdancer2-perl  
+» libdist-zilla-plugin-git-perl  
+» libdist-zilla-plugin-makemaker-awesome-perl  
+» libdist-zilla-plugin-ourpkgversion-perl  
+» libfile-find-object-rule-perl  
+» libfile-flock-retry-perl  
+» libgeoip2-perl  
+» libxxx-perl  
+» libstrictures-perl  
+» libsisimai-perl  
+» libstring-tagged-perl  
+» libperl-critic-policy-variables-prohibitlooponhash-perl  
+» libnet-appliance-session-perl  
+» Updated and uploaded `gitlab` 11.10.4 to experimental (thanks to praveen).  
+» Uploaded `gitaly`, `gitlab-workhorse`.  
+» Sponsored a couple of packages (DM access).  
+» Helping DC19 `Bursary team`.  
+» Helping DC19 `Content team`.  
+
+---
+
+## Change of Events
+
+When I started off, I hit an obstacle. Little did we know about how to go about packaging complex applications like that.  
+I have been helping out in packages like `gitlab`, `diaspora`, et al. And towards the end of the last week, we learned that `loomio` needs to be done like `diaspora`.  
+First goes the `loomio-installer`, then would come the main package, loomio.  
+
+Now, the steps that are to be followed for `loomio-installer` are as follows:  
+» Get the app source.  
+» Install gem dependencies.  
+» Create database.  
+» Create tables/run migrations.  
+» Precomiple assets (scss -> css, et al).  
+» Configure nginx.  
+» Start service with systemd.  
+» Pulling gems via `gem install` and modules via `npm install`.  
+» Loomio would be done with the same way we’re doing gitlab.  
+
+Now, for 
