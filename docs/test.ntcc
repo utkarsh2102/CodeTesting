@@ -1,0 +1,55 @@
+
+# Software Packaging for Debian Repositories
+
+## Software Packaging   
+`Software packaging` is nothing but assembling all the upstream files and the metadata about it into a single `.zip` or `.tar`, or whichever compression tool one uses.  
+Most Linux distributions have their own `package management system`, like `Fedora` uses `rpm`, `Debian` uses `apt`, `Arch` uses `pacman`, and so on.  
+Of course, packaging differs from one OS to another. For instance, the packaging workflow is different for `Windows`, `Linux`, and `MacOS`.  
+Under Linux, the packaging even differs b/w different distributions.  
+Yes, that means packaging for `.rpm` is different from what it is for `.deb`.  
+In this report, we'd package a software for Debian (that is a Linux OS) repositories (a.k.a `apt` repositories).  
+
+---
+
+## About Debian
+
+Since **Debian** is `free and open source`, it's [philosophy](https://www.debian.org/devel/join/nm-step3) is a crucial thing to keep in mind while doing anything related to Debian. Reading about `free software` in general is also a good idea.  
+To go even further, the two documents, the [Social Contract](https://www.debian.org/social_contract) and the [Debain Free Software Guidlines](https://www.debian.org/social_contract#guidelines) are important to be thorough with. These documents lay the basic principles of Debain and any work for and related to Debian should follow the same.  
+
+Now, coming to Debian, it's [Developer Reference](https://www.debian.org/doc/manuals/developers-reference/) is fairly **very** important. It is a well documented manual for doing Debian related stuff, be it packaging or be it setting up Debian mirrors and servers.  
+
+---
+
+## Why Debian?
+
+Oh well, the philosophy of Debian pretty much aligns with what I see free software and open source as. Ian Mudrock did a really good job in setting this project as a `"community project"` right from the start.  
+Since then, Debian has become one of the largest and the most successful open source projects.  
+Being stable like a rock, Debian is the preferred choice for a `server`. Almost all the big companies like `Google`, `Microsoft`, `Amazon`, et al use Debian as their preferred choice of server.  
+Well, not only this, Debian gives recognition to its contributors by giving them various status in Debian, such as `Debian Maintainer`, `Debian Developer`, et al.  
+Being a part of Debian for a while, I am one of the youngest Debian Maintainer in the entire Debian Project; and soon to be a Debian core-developer as well.  
+This means, I can upload my own packages to the Debian archive, which would then become `apt-installable`. And by being a core Developer, I could use Debian machines, get voting rights, access debian-private, et al.  
+Thus, Debian.  
+
+---
+
+## Packaging the Loomio Software
+
+This brings us to the [packaging](https://wiki.debian.org/Packaging) wiki, which tells us the basics of `how-to`. Clearly enough, the first step is to set up your `system/host environment`.  
+Also, for this report, we'd be packaging a free and open source software called `Loomio` for Debian.  
+**Loomio** helps in making `collaborative decision making`. This has proved to be quite helpful for a lot of threads that couldn't come up to a single, simple decision.  
+A lot of core developers have been using it and thus we'd be packaging this for the Debian repositories.  
+Loomio is mostly written in `Ruby`, but also includes some `JavaScript` and `CoffeeScript`.  
+Now, here's something interesting about Debian. For a software to be packaged for the apt repositories, all the dependencies of that software needs to be packaged separately and uploaded to the archive.  
+A package can not install a gem or a module via `gem install xyz` or via `npm install xyz`. Using "internet" while `building` a package is prohibited, as per the Debian policy.  
+Thus the idea is to package all the dependencies first and then the main package Loomio and make it `apt-installable` on the Debian machines.
+
+---
+
+## Project Details
+
+The package, Loomio, has around over **30 unpackaged Ruby gems** (which are directly needed, as shown by the tracker), over **30 gems** that have **unsatisfiable dependency versions**, and around **10-15 unpackaged sub-dependencies**. In _total_, for the `Ruby` side of the code, we have **70-75 gems** that are needed to be taken care of, under the `Ruby team`. Hovering over the source code of Loomio also tells us the need to ensure the packaging of `fonts` under the `Debian Fonts Task Force` team. Also, for the same, we will need to package **mdi (2.2.43)** and also check with the `roboto-fonts`, as **roboto-v18-*** is needed for Loomio.  
+Coming towards the **JavaScript** and the **CoffeeScript** section, we will need to package a few `simple modules` and a couple of `complex JS packages`, as needed by Loomio and mentioned in the `package.json` file, under the `client` directory of Loomio. If summed up, an `approximate` of **20-25 new modules** will be needed to package and a handful would be needed to **update**, **fix and embed**, under the `JavaScript team`.  
+However, the **three packages** that could be `tricky` and `important` are **loomio-angular-router**, **loomio-angular-marked**, which have a couple of `sub-dependencies` themselves and **node-lodash**, whose `transition` might prove to be complex, as it has around **33 reverse dependencies**, including some key packages like **webpack**.  
+Once all the `dependencies` and `sub-dependencies` are successfully `packaged` and `uploaded`, then would come the main package, **Loomio**. It is a fairly `big and complex` package with over **484 directories** and **4607 files** as a part of it’s code base. For the same, we’ll need to write a **pre/post-inst** and a **pre/post-rm** script to set the `configuration` the right way, including all the `symlinks` that are needed for `smooth installation`.
+
+---
