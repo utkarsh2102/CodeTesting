@@ -53,3 +53,11 @@ However, the **three packages** that could be `tricky` and `important` are **loo
 Once all the `dependencies` and `sub-dependencies` are successfully `packaged` and `uploaded`, then would come the main package, **Loomio**. It is a fairly `big and complex` package with over **484 directories** and **4607 files** as a part of it’s code base. For the same, we’ll need to write a **pre/post-inst** and a **pre/post-rm** script to set the `configuration` the right way, including all the `symlinks` that are needed for `smooth installation`.
 
 ---
+
+## Setting up the Environment
+
+Well, of course, setting up the required `env` for packaging is important. You cannot just package a software for `Debian Buster` on `Windows`,  or on any other `operating system` or any other `Linux distribution`, unless you set up the environment to do so.  
+Setting up `envs` can be a pain, but let's make it as easier as it could get.  
+There are a few `configuration` files (or **.*rc** files) that are needed to be edited.  
+Here are the following ways you could start packaging:  
+- Meow.
