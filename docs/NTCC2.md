@@ -13,7 +13,7 @@ In this report, we'd package a software for Debian (that is a Linux OS) reposito
 ## About Debian
 
 Since **Debian** is `free and open source`, it's [philosophy](https://www.debian.org/devel/join/nm-step3) is a crucial thing to keep in mind while doing anything related to Debian. Reading about `free software` in general is also a good idea.  
-To go even further, the two documents, the [Social Contract](https://www.debian.org/social_contract) and the [Debain Free Software Guidlines](https://www.debian.org/social_contract#guidelines) are important to be thorough with. These documents lay the basic principles of Debain and any work for and related to Debian should follow the same.  
+To go even further, the two documents, the [Social Contract](https://www.debian.org/social_contract) and the [Debain Free Software Guidlines](https://wiki.debian.org/DFSGLicenses) are important to be thorough with. These documents lay the basic principles of Debain and any work for and related to Debian should follow the same.  
 
 Now, coming to Debian, it's [Developer Reference](https://www.debian.org/doc/manuals/developers-reference/) is fairly **very** important. It is a well documented manual for doing Debian related stuff, be it packaging or be it setting up Debian mirrors and servers.  
 
@@ -52,6 +52,10 @@ However, the **three packages** that could be `tricky` and `important` are **loo
 Once all the `dependencies` and `sub-dependencies` are successfully `packaged` and `uploaded`, then would come the main package, **Loomio**. It is a fairly `big and complex` package with over **484 directories** and **4607 files** as a part of it’s code base. For the same, we’ll need to write a **pre/post-inst** and a **pre/post-rm** script to set the `configuration` the right way, including all the `symlinks` that are needed for `smooth installation`.  
 
 **NOTE**: There are a lot of packages (~27) with `test failures` which are to be fixed before we can proceed. Hence, a good amount of Ruby and JavaScript knowledge would be needed for the same. Some pictures that are not following the `DFSG` would need to be `removed` and the `upstream tarball` would need to be `repacked`. Also, we’ll have to create our own personal repository (via `reprepro`) in order to test the successful installation of Loomio as it takes time for the package to clear the `NEW queue`.  
+
+Here's a little preview of the workflow to follow:  
+
+![Loomio Plan](#img)
 
 ---
 
@@ -272,7 +276,7 @@ Thus I packaged the following modules and helped in:
 ## Change of Events
 
 When I started off, I hit an obstacle. Little did we know about how to go about packaging complex applications like that.  
-I have been helping out in packages like `gitlab`, `diaspora`, et al. And towards the end of the last week, we learned that `loomio` needs to be done like `diaspora`.  
+I have been helping out in packages like `gitlab`, `loomio`, et al. And towards the end of the last week, we learned that `loomio` needs to be done like `loomio`.  
 First goes the `loomio-installer`, then would come the main package, loomio.  
 
 Now, the steps that are to be followed for `loomio-installer` are as follows:  
@@ -286,4 +290,268 @@ Now, the steps that are to be followed for `loomio-installer` are as follows:
 » Pulling gems via `gem install` and modules via `npm install`.  
 » Loomio would be done with the same way we’re doing gitlab.  
 
-Now, for 
+Now, for `loomio-installer`, we need to write a couple of `shell scripts` that could help in getting the loomio-installer set up smoothly.  
+
+---
+
+## Script for Adding a User
+
+```
+#!/bin/sh
+
+# add loomio system user (requires adduser >= 3.34)
+# don't muck around with this unless you KNOW what you're doing
+user=loomio
+
+echo "Creating/updating $user user account..."
+adduser --system --home /var/lib/$user \
+	--gecos "$user system user" --shell /bin/false \
+	--quiet --disabled-password --disabled-login $user || {
+  # adduser failed. Why?
+  if [ `getent passwd $user|awk -F ':' '{print $3}'` -gt 999 ] >/dev/null ; then
+	echo "Non-system user $user found. I will not overwrite a non-system" >&2
+	echo "user.  Remove the user and reinstall loomio." >&2
+	exit 1
+  fi
+  # unknown adduser error, simply exit
+  exit 1
+  }
+
+chown ${user}: /var/lib/$user
+```  
+
+---
+
+## Script for Writing in a Database (YML)
+
+```
+mysql: &mysql
+  adapter: mysql2
+  host: "localhost"
+  port: 3306
+  username: "root"
+  password: ""
+#  socket: /tmp/mysql.sock
+  encoding: utf8mb4
+  collation: utf8mb4_bin
+
+postgres: &postgres
+  adapter: postgresql
+  host: /var/run/postgresql
+  port: 5432
+  username: loomio
+  password:
+  encoding: unicode
+```  
+
+---
+
+## Nginx Configuration
+
+```
+upstream domain11 {
+        server unix:/usr/share/loomio/tmp/loomio.sock;
+}
+
+server {
+	listen		80;
+	server_name	SERVERNAME_FIXME www.SERVERNAME_FIXME;
+	rewrite		^ https://$server_name$request_uri? permanent;
+}
+
+server {
+            listen   443;
+            server_name SERVERNAME_FIXME www.SERVERNAME_FIXME;
+
+            proxy_set_header   X-Real-IP  $remote_addr;
+            proxy_set_header   X-FORWARDED-PROTO https;
+
+	    ssl on;
+	    ssl_certificate     loomio_SSL_PATH_FIXME/ssl/SERVERNAME_FIXME-bundle.pem;
+	    ssl_certificate_key loomio_SSL_PATH_FIXME/ssl/SERVERNAME_FIXME.key;
+
+            access_log /var/log/loomio/access.log;
+            error_log /var/log/loomio/error.log;
+
+            root   loomio_ROOT_FIXME/public/;
+            index  index2.html;
+
+            if ($http_user_agent ~* Googlebot) {
+                return 403;
+            }
+
+	    location /uploads/images {
+	      expires 1d;
+	      add_header Cache-Control public;
+	    }
+
+            location /assets {
+              expires 1d;
+              add_header Cache-Control public;
+            }
+
+            location / {
+                          proxy_set_header X-Real-IP $remote_addr;
+                          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                          proxy_set_header Host $http_host;
+                          proxy_set_header X-Forwarded-Proto https;
+                          proxy_redirect off;
+
+                          client_max_body_size 4M;
+                          client_body_buffer_size 128K;
+
+                          if (-f $request_filename/index.html) {
+                                           rewrite (.*) $1/index.html break;
+                          }
+
+                          if (-f $request_filename.html) {
+                                           rewrite (.*) $1.html break;
+                          }
+
+                          if (!-f $request_filename) {
+                                           proxy_pass http://domain11;
+
+                                           break;
+                          }
+            }
+
+	if ($http_user_agent ~ "Python-urllib" ) {
+		return 403;
+	}
+
+	if ($http_user_agent ~ "libwww-perl" ) {
+		return 403;
+	}
+
+	error_page 500 502 503 504  /50x.html;
+	location = /50x.html {
+		root  loomio_ROOT_FIXME;
+	}
+}
+```   
+
+---
+
+## Installing Loomio
+
+Lastly, we want to fetch Loomio from upstream for `loomio-installer`.  
+
+```
+#!/bin/sh
+
+# Source variables
+. /etc/loomio/loomio-common.conf
+
+echo "Download loomio tarball version ${loomio_version} from github.com..."
+
+# Downloading a branch and tag is supported
+if test ${loomio_release_type} = "branch"
+then
+    export loomio_archive="loomio-release-${loomio_version}"
+else
+    export loomio_archive="loomio-${loomio_version}"
+fi
+
+chown ${loomio_user}: ${loomio_cache}
+chown ${loomio_user}: ${loomio_user_home}
+
+# Skip download if already present
+if ! test -f ${loomio_cache}/loomio-${loomio_version}.tar.gz
+then
+    if test ${loomio_release_type} = "branch"
+    then
+	su  ${loomio_user} -s /bin/sh -c "wget -O ${loomio_cache}/loomio-${loomio_version}.tar.gz ${github_archive_url}/release/${loomio_version}.tar.gz"
+    else
+        su  ${loomio_user} -s /bin/sh -c "wget -O ${loomio_cache}/loomio-${loomio_version}.tar.gz ${github_archive_url}/v${loomio_version}.tar.gz"
+    fi
+fi
+
+echo "Checking integrity of download..."
+su  ${loomio_user} -s /bin/sh -c "sha256sum -c ${loomio_sha256sums}"
+
+echo "Extracting files..."
+su  ${loomio_user} -s /bin/sh -c "tar -C ${loomio_cache} -zxvf ${loomio_cache}/loomio-${loomio_version}.tar.gz >/dev/null"
+    
+echo "Copying files to ${loomio_home}..."
+    
+echo "loomio archive to copy: ${loomio_archive}"
+
+su  ${loomio_user} -s /bin/sh -c "mkdir -p ${loomio_user_home}/public"
+su  ${loomio_user} -s /bin/sh -c "mkdir -p ${loomio_user_home}/app-assets"
+
+rsync -a ${loomio_cache}/${loomio_archive}/* ${loomio_home} --exclude tmp --exclude log --exclude app/assets --exclude public --exclude config --exclude Gemfile.lock
+su  ${loomio_user} -s /bin/sh -c "cp -r  ${loomio_cache}/${loomio_archive}/app/assets/* ${loomio_user_home}/app-assets"
+su  ${loomio_user} -s /bin/sh -c "cp -r  ${loomio_cache}/${loomio_archive}/public/* ${loomio_user_home}/public"
+cp -r  ${loomio_cache}/${loomio_archive}/config/* /etc/loomio
+
+echo "Applying patches..."
+patch -p2 -t -d config -i /usr/share/loomio-installer/patches/set-rails-root.patch
+
+echo "Copying source tarball to ${loomio_user_home}/public..."
+cp -f ${loomio_cache}/loomio-${loomio_version}.tar.gz ${loomio_user_home}/public/source.tar.gz
+```  
+
+---
+
+## Installing `loomio-installer`
+
+### Pulling from my Personal Archive
+
+I did a set up of `reprepro`, creating my own `apt` repository, hosted on my server.  
+This means, I (or anyone can) pull packages from my machine until all the dependencies and the loomio-installer hits the `official Debian arhives`.  
+Here's a snapshot showing my `personal archive`.  
+
+![Personal Archive](#img)  
+
+### Installing Loomio
+
+Before we proceed, we need to configure `/etc/hosts` to point to the desired domain.  
+My `/etc/hosts` file looks something like:  
+
+`$ cat /etc/hosts`  
+```
+127.0.0.1	    localhost  
+127.0.1.1	    utkarsh2102  
+192.168.1.8     loomio.me  
+// The following lines are desirable for IPv6 capable hosts  
+::1     localhost ip6-localhost ip6-loopback  
+ff02::1 ip6-allnodes  
+ff02::2 ip6-allrouters  
+```
+
+Now, once set, we are set to install the `loomio-installer` via the command:  
+`$ sudo apt install loomio-installer`  
+
+This installs the `installer`, whose binary is `loomio` itself (and **not** `loomio-installer`).  
+
+---
+
+## Executing Loomio
+
+On any Debian system, once my personal archive is set to `/etc/hosts` and `loomio-installer` is installed, one could execute the `binary` by the command:  
+`$ loomio`  
+
+And here's what will happen:  
+
+![Executing Loomio](#img)
+
+---
+
+## Post-NTCC Work
+
+Well, with my DM hat on, I am supposed to actually package loomio and the remaining `node` modules and then make `loomio` installable on the Debian systems.  
+For the same, there are lots of `test failures` pending which are to be fixed and re-uploaded to the archive. After doing the same, we'd then need to write `maintainer scripts` for setting up `loomio` and also take care of the `symlinks` which clashes with the `loomio-installer`.  
+Thus, a lot of work is needed to completely package such a complex software!  
+
+---
+
+## References
+
+- https://wiki.debian.org/Packaging  
+- https://www.debian.org/doc/manuals/developers-reference  
+- https://www.debian.org/social_contract  
+- https://wiki.debian.org/DFSGLicenses  
+- https://wiki.debian.org/Teams/Ruby/Packaging  
+- https://wiki.debian.org/Teams/Ruby/Packaging/Tests  
+
+---
