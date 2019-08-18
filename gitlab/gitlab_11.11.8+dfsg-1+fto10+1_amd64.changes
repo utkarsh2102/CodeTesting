@@ -1,0 +1,45 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Wed, 14 Aug 2019 17:39:22 +0530
+Source: gitlab
+Architecture: source
+Version: 11.11.8+dfsg-1+fto10+1
+Distribution: buster-fasttrack
+Urgency: medium
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Changed-By: Pirate Praveen <praveen@debian.org>
+Changes:
+ gitlab (11.11.8+dfsg-1+fto10+1) buster-fasttrack; urgency=medium
+ .
+   * Rebuild for buster-fasttrack.
+Checksums-Sha1:
+ f9c5df238f8d66cabf5e20a68206cf5f3d9cbce7 2385 gitlab_11.11.8+dfsg-1+fto10+1.dsc
+ 8ccb9f220a0b66dbeb2a67a72e19b1ec16c8c78d 1174812 gitlab_11.11.8+dfsg-1+fto10+1.debian.tar.xz
+ f36c689726ecb7f50d9813a5ac3783474998be28 13026 gitlab_11.11.8+dfsg-1+fto10+1_amd64.buildinfo
+Checksums-Sha256:
+ 9fd6390a94e4c884adc2e428704138c023ee31525f72ddec5a25391f579419cd 2385 gitlab_11.11.8+dfsg-1+fto10+1.dsc
+ 52b7061eb3babde3e4754f053d77286bae35a2143871b149ea17d351bcae6a29 1174812 gitlab_11.11.8+dfsg-1+fto10+1.debian.tar.xz
+ fe83e08b095db3293931fbeb2a5fe67ce91c32ba12b9c3323d67379ed7770602 13026 gitlab_11.11.8+dfsg-1+fto10+1_amd64.buildinfo
+Files:
+ 393db2ec975c42ab1bc2cc24394edfaf 2385 net optional gitlab_11.11.8+dfsg-1+fto10+1.dsc
+ 500dd81d72f9ceba28f649a556cfb85c 1174812 net optional gitlab_11.11.8+dfsg-1+fto10+1.debian.tar.xz
+ 1927ef1e3359b682bed3fb683f182d5e 13026 net optional gitlab_11.11.8+dfsg-1+fto10+1_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEbJ0QSEqa5Mw4X3xxgj6WdgbDS5YFAl1ZA3AACgkQgj6WdgbD
+S5ZOtQ/+KeuEru1raNE3YtkNMwG6yiiwXEDIdZYaBN/eglcArmKONcJchl4pgwpr
+J2aBLzRviL5J449oqWReI0Zgb52Mwyv5ld5SQVpvK5y51xPnbzkgBwn26eC9ahly
+VQl7MC1MNsczR2XHnPO5qLnurLKHph4Jh1KnXeU84+gl0S6O7516FYYQdGQZyjrP
+krjPZig5e3lf9aQM2zNZD9g/zr0bahrCfkxPO2mZXEs/v9O6cIJozfCqv3R8m22I
+DAqcq0Oo8svIdprgBuESgxkhB+E7+GPfKbKXyVlBMEhCNXInfXncyZ+bixGn9knD
+oc7bTK3lS/jRRNiXytlvFUaGVs/ciM+6p30F7IyI91zmYX66f6SSEsN0IlY5xneN
+NhufArGmBlXjrCYTrMoD/p2bf5D5Y406rh1H5mUcTzvVVWJ38HIGd+4PHF3tRnES
+TYkOZs874Z8711m4ut7iy6wbPxAFiHw3i/o3FQ34q74EOik+Z18yjiQb+CClqdmK
+HjcrwDOvd/xm42RcfqFUS6TWnOeb6FaMVCY+4rsGfjmwVhoA/uQRIBeRwDdmtmhI
+xb2b8017tgYvQkpOo9FJP634EElEbYrddlRKxscH+Sz4xPAVUgoP9s6IxiGCQuv4
+MfmKzsqCtiFD7WVVHBiFP+Y0K/bM2APqHxCutOZpYJV5KNNOp1A=
+=5GJc
+-----END PGP SIGNATURE-----
