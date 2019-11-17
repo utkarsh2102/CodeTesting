@@ -5,7 +5,9 @@
 - [ ] Amsterdam
 - [ ] Australia
 - [ ] Austria
+    - [ ] Styria
 - [ ] Bali
+- [ ] Belize
 - [ ] Belgium
 - [ ] Boston
 - [ ] Brazil
@@ -27,6 +29,8 @@
     - [ ] Newcastle
     - [ ] Nottingham
     - [ ] Southampton
+- [ ] Finland
+    - [ ] Lapland
 - [ ] France
     - [ ] Lyon
     - [ ] Marseille
@@ -37,18 +41,20 @@
 - [ ] Israel
 - [ ] Italy
 - [ ] Maldives
+- [ ] Mexico
 - [ ] Michigan
 - [ ] New York
 - [ ] New Zealand
 - [ ] Ohio
+- [ ] Philippines
 - [ ] Scotland
 - [ ] South Africa
     - [ ] Cape Town
     - [ ] Kimberley
     - [ ] Knysna
     - [ ] Port Elizabeth
+- [ ] Sweden
 - [ ] Switzerland
-- [ ] Syria
 - [ ] Turkey
 
 Patches welcome! :)  
