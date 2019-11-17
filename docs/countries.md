@@ -10,7 +10,7 @@
 - [ ] Boston
 - [ ] Brazil
     - [ ] Chapada Diamantina
-    - [ ] Curitiba
+    - [x] Curitiba
     - [ ] Fortaleza
     - [ ] Foz do Iguaçu
     - [ ] Rio de Janeiro
@@ -22,7 +22,7 @@
     - [ ] Glasgow
     - [ ] Leicester
     - [ ] Liverpool
-    - [ ] London
+    - [x] London
     - [ ] Manchester
     - [ ] Newcastle
     - [ ] Nottingham
