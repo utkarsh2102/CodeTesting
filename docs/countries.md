@@ -3,13 +3,15 @@
 (this is not what you think it is)  
 (in alphabetical order)  
 
-- [ ] Amsterdam
+- [x] Netherlands
+    - [x] Amsterdam
 - [ ] Australia
 - [ ] Austria
     - [ ] Styria
 - [ ] Bali
 - [ ] Belize
-- [ ] Belgium
+- [x] Belgium
+    - [x] Brussels
 - [ ] Boston
 - [ ] Brazil
     - [ ] Chapada Diamantina
@@ -35,7 +37,7 @@
 - [ ] France
     - [ ] Lyon
     - [ ] Marseille
-    - [ ] Paris
+    - [x] Paris
 - [ ] Germany
 - [ ] Iceland
 - [ ] Ireland
