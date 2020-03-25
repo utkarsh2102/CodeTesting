@@ -23,3 +23,18 @@
 </p>
 
 ---
+
+## __**Project Description**__:
+
+The Debian Ruby team has a lot of experience in packaging and managing Ruby gems and applications for Debian. During this work, they identified several issues in upstream codebases that makes it more difficult to build a Debian package out of Ruby gems directly.  
+This project has two goals:  
+1. Raise awareness of those issues among upstream maintainers in the Ruby community, so that the lives of Debian maintainers, and of distribution maintainers in general, gets easier; and  
+2. Provide tools to automatically detect those issues, and fix them if possible.  
+
+---
+
+## __**Project Details**__:
+
+TBD.
+
+---
