@@ -1,8 +1,7 @@
 <h1 align="center"> GSoC Proposal </h1>
----
 
 <p align="center">
-  <img src="assets/rubytogether.png">
+  <img src="/assets/rubytogether.png">
 </p>
 
 <p align="center">
@@ -14,7 +13,7 @@
 </br>
 
 <p align="center">
-  <img src="assets/debian.png">
+  <img src="/assets/debian.png">
 </p>
 
 <p align="center">
