@@ -30,10 +30,19 @@ This project has two goals:
 1. Raise awareness of those issues among upstream maintainers in the Ruby community, so that the lives of Debian maintainers, and of distribution maintainers in general, gets easier; and  
 2. Provide tools to automatically detect those issues, and fix them if possible.  
 
----
+--- 
 
 ## __**Project Details**__:
 
-TBD.
+We (including me, with my Ruby team member hat on), indeed, have faced several repetitive issues in the upstream code that has interfered with our Debian work.  
+Whilst such pieces of code might be working for upstream, the downstream is constantly patching this out.  
+
+There are two kinds of issues here, namely:
+1. Issues where downstream needs to patch $things out **BUT** they're required by the upstream.  
+    * For instance, the usage of Bundler.
+
+2. Issues where with little cooperation & coordination, $things can be patched upstream, which would, in turn, make the life of downstream maintainers relatively easy.  
+This is what this project will focus on.
+
 
 ---
