@@ -99,3 +99,54 @@ The following problems have been frequently faced and reported by the team membe
 3. Et cetera -- when raised by fellow team members.  
 
 ---
+
+## __**Some Quick Stats**__:
+
+There are presently about 1510 projects/repositories under the Ruby team namespace on
+Salsa. Grepping them for patches applied by the team to fix above problems results in
+some interesting statistics as shown below:  
+
+1. Total number of patches: 2064  
+2. Patches for dropping git in gemspec: 205  
+3. Patches for fixing relative paths: 156  
+
+As the number of packages increases, so shall the number of patches.  
+
+---
+
+## __**Solution/Approach**__:
+
+Well, keeping aforementioned problems in mind, the best way forward is to extend
+rubocop -- a Ruby static code analyzer and formatter, based on the community Ruby style
+guide.  
+
+As Antonio, a fellow Ruby team member and the mentor of this project, advised, RuboCop
+has already got a pretty nice (and solid) infrastructure and so writing everything from
+scratch would be doing nothing but just re-inventing the whole “static-analysis”
+infrastructure. And we certainly don’t want to do that.  
+
+So it’d be ideal to reuse RuboCop’s infrastructure and run it against our own rules, focusing
+just on the problems we want to patch.  
+Furthermore, upon exploring, we got the impression that creating a RuboCop plugin would
+make things a lot easier.  
+
+Much thanks to the RuboCop community, they’ve created a generator of RuboCop's custom
+cops gem. Repository for the generator could be found here[1].  
+[1]: ​https://github.com/rubocop-hq/rubocop-extension-generator  
+
+---
+
+## __**Project Deliverables​**__:
+
+The project deliverables during/for 3-month period are as follows:  
+
+1. A tool that can detect as many problems as possible, and ​ if possible​ , fix them.  
+   a. Packaged and released in rubygems.org.  
+   b. Packaged and released in the Debian archive.  
+2. A guide for rubygems.org on good practices for upstream maintainers.  
+3. Good documentation :)  
+
+Post GSoC, with my Ruby team hat on, I intend to maintain it and enhance it further as
+more problems are faced and reported.  
+
+---
