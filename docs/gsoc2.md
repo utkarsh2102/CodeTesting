@@ -69,3 +69,33 @@ Below is the list of problems that this project initially aims to enlighten upst
 (and if possible, help them patch these as well).  
 
 ---
+
+## __**Problems Faced**__:
+
+The following problems have been frequently faced and reported by the team members:  
+  1. Using relative paths.  
+     a. Either via “​require_relative​”,  
+     b. Or via ”​require ../../lib/foo/bar​”.  
+  2. Using ​$LOAD_PATH​.  
+  3. Using ​git​ in gemspec​:  
+	The upstream mostly (if not always) uses `git ls-files`​ which becomes a huge pain
+	for downstream as it adds an unnecessary dependency on git.  
+	A fix for this is as simple as using ​Dir.glob(“**/*”)​ instead :)  
+	This works for both, upstream and downstream, then why not, you ask?  
+
+---
+
+## __**Other Problems**__:
+
+(it’d be nice to have the following problems been taken care of as well)  
+
+1. Shipping binary without manpage.  
+	Whilst not a necessity, it’s always good to ship a manpage along with the binary.  
+
+2. Use SemVer and try to not tighten dependencies.  
+	This breaks a lot of things with minor version updates; perhaps would be best to
+	just use something like “​~> x.y​” in gemspec (instead of “​~> x.y.z​”).  
+
+3. Et cetera -- when raised by fellow team members.  
+
+---
