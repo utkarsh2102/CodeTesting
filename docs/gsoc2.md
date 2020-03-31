@@ -150,3 +150,43 @@ Post GSoC, with my Ruby team hat on, I intend to maintain it and enhance it furt
 more problems are faced and reported.  
 
 ---
+
+## __**Availability​**__:
+
+I am willing to work for​ *30 hours* a week on this project. Unfortunately, due to the
+COVID-19 fiasco, my university exams have been postponed till further notice.  
+
+The exams might now be scheduled from the last week of May till the 3rd week of June.
+If this happens and hinders the 1st phase of the GSoC period, I’ll work extra in the
+subsequent weeks and make it up to the lost time for the project.  
+
+Moreover, I intend to work less during the 12th week as it is the DebConf week. I’m hoping
+to attend the conference, either online or otherwise.  
+
+---
+
+## __**Other Contributions to Debian​**__:
+
+For the love of the project, I’ve been contributing to Debian in various ways:  
+
+1. Packaging and maintenance of over 600+ Debian packages.  
+2. FTP Trainee.  
+3. Debian LTS.  
+4. Patching upstream so it makes the maintainer's life easier.  
+5. Organizing MiniDebConfs across India.  
+6. Helping in DebConfs (Content & Bursary team) + orga DebConf22.  
+7. Mentoring people in Outreachy or otherwise to help them get onboard with the community.  
+
+---
+
+## __**Contact Links and Profiles​**__:
+
+1. Debian QA Profile: ​utkarsh  
+2. NM Profile: utkarsh  
+3. Salsa: ​utkarsh​ (previously ​utkarsh2102-guest​)  
+4. GitHub: ​utkarsh2102  
+5. Email: ​utkarsh@debian.org  
+6. IRC: utkarsh2102 on OFTC, Freenode.  
+7. GPG Fingerprint: 6C9D 1048 4A9A E4CC 385F 7C71 823E 9676 06C3 4B96  
+
+---
